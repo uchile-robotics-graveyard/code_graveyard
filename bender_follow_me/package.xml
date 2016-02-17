@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<package>
+  <name>bender_follow_me</name>
+  <version>0.0.1</version>
+  <description>The bender_follow_me package</description>
+  <maintainer email="matias.pavez.b@gmail.com">Matias Pavez B.</maintainer>
+  <author email="matias.pavez.b@gmail.com">Matias Pavez B.</author>
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Used for Eigen -->
+  <build_depend>cmake_modules</build_depend>
+
+  <build_depend>bender_msgs</build_depend>
+  <build_depend>bender_srvs</build_depend>
+  <build_depend>dynamic_reconfigure</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>nodelet</build_depend>
+  <build_depend>pluginlib</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>roslib</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>std_srvs</build_depend>
+  <build_depend>yaml-cpp</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>pcl_ros</build_depend>
+  <build_depend>bender_config</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>bender_laser</build_depend>
+
+  <build_depend>message_generation</build_depend>
+  <build_depend>message_runtime</build_depend>
+  
+  <run_depend>message_runtime</run_depend>
+  <run_depend>message_generation</run_depend>
+  <run_depend>bender_laser</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>bender_config</run_depend>
+  <run_depend>pcl_ros</run_depend>
+  <run_depend>cv_bridge</run_depend>
+  <run_depend>image_transport</run_depend>
+  <run_depend>bender_msgs</run_depend>
+  <run_depend>bender_srvs</run_depend>
+  <run_depend>dynamic_reconfigure</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>nodelet</run_depend>
+  <run_depend>pluginlib</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>roslib</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>std_srvs</run_depend>
+  <run_depend>yaml-cpp</run_depend>
+
+  <build_depend>libopenni-dev</build_depend>
+  <run_depend>libopenni-dev</run_depend>
+  <build_depend>libopenni-sensor-primesense-dev</build_depend>
+  <run_depend>libopenni-sensor-primesense-dev</run_depend>
+
+<!--
+<build_depend>libopenni-nite-dev</build_depend> 
+<build_depend>libopenni-sensor-primesense-dev</build_depend>
+<run_depend>libopenni-nite-dev</run_depend>
+<!- -
+<build_depend>libopenni2-dev</build_depend>
+<build_depend>libusb-1.0-dev</build_depend>
+<build_depend>roscpp</build_depend>
+<run_depend>libopenni2-dev</run_depend>
+<run_depend>libusb-1.0-dev</run_depend>
+<run_depend>libopenni-sensor-primesense-dev</run_depend>
+-->
+
+  <export>
+  </export>
+</package>

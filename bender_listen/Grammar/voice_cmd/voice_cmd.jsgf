@@ -1,0 +1,6 @@
+#JSGF V1.0;
+
+grammar voicecmd;
+
+public <voicecmd> = (FORWARD | LEFT | RIGHT | BACK | BACKWARD | STOP | MOVE FORWARD | MOVE RIGHT | MOVE LEFT | MOVE BACK | MOVE BACKWARD | HALT | HALF SPEED | FULL SPEED );
+

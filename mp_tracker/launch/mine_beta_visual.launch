@@ -1,0 +1,22 @@
+<launch>
+  <node pkg="mp_tracker" type="d_tracker_vision_node" name="phd_vision_beta_tracker" output="screen">
+    <param name="tracking_frame" value="/odom"/>
+    <param name="laser_topic" value="/scan"/>
+    <param name="pointcloud_topic" value="/openni/depth/points"/>
+    <param name="camera_topic" value="/openni/rgb/image_color"/>
+    <param name="camera_info_topic" value="/openni/rgb/camera_info"/>
+    <param name="use_beta_mixture" value="true"/>
+    <param name="use_optimal_beta_merge" value="true"/>
+    <param name="merge_beta_threshold" value="0.04"/>
+    <param name="merge_gauss_threshold" value="0.1"/>
+    <param name="max_components" value="200"/>
+    <param name="clutter" value="0.000001"/>
+    <param name="birth_prior_weight" value="1.0"/>
+    <param name="detection_certainty" value="0.5"/>
+    <param name="detection_not_certainty" value="0.1"/>
+    <param name="certainty_person_threshold" value="0.4"/>
+    <param name="certainty_person_extraction" value="0.6"/>
+    <param name="use_leg_detector" value="false"/>
+    <param name="debug_script" value=""/>
+  </node>
+</launch>

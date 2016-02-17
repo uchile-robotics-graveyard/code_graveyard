@@ -1,0 +1,12 @@
+<!-- -*- mode: XML -*- -->
+
+<launch>
+
+    <node name="macros" pkg="bender_arm" 
+    	type="macros" />
+
+    <node name="baseArm_Controller_mod" pkg="bender_arm" 
+    	type="baseArm_Controller" />
+
+    	  	
+</launch>

@@ -1,0 +1,15 @@
+
+<launch>
+
+	<arg name="publish_period" value="100"/>
+
+	<node pkg="bender_sensors" type="laser_inverter" name="hokuyo_front_inverter" ns="/bender/sensors">
+		<remap from="/bender/sensors/laser_transformer/scan_inverted" to="/bender/sensors/laser_front/scan_inverted"/>
+		<remap from="/bender/sensors/laser_transformer/scan" to="/bender/sensors/laser_front/scan"/>
+	</node>
+
+	<node name="laser_front_inverted_tf" pkg="tf" type="static_transform_publisher"
+   args="0.245 0 0.170 0 0 0 /bender/base_link /bender/sensors/laser_front_link_inverted $(arg publish_period)" ns="/bender/tf/"/>
+
+
+</launch>

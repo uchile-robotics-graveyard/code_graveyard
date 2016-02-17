@@ -1,0 +1,5 @@
+conf/
+log/
+*.log
+*/log.txt
+*/loc.txt

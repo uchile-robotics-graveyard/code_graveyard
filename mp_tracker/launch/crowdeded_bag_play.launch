@@ -1,0 +1,47 @@
+<launch>
+  <node pkg="rosbag" type="rosbag" name="bag_player" args="play /data/bagfiles/tracking_exps_crowded/javier_exp01.bag --clock /tf:=/tf_old" output="screen"/>
+
+  <node pkg="rosbag" type="rosbag" name="bag_recorder" args="record -b 0 -O/data/bagfiles/tracking_exps_crowded/javier_exp01_fixed.bag /camera/rgb/camera_info /camera/rgb/image_color /odom /scan /tf"/>
+  <node pkg="tf" type="tf_remap" name="tf_remap" output="screen">
+    <rosparam file="$(find mp_tracker)/conf/tf_rename.yaml" command="load" />
+  </node>
+
+  <!-- Run the map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find icl_robot)/maps/physics.yaml"/>
+
+  <node pkg="amcl" type="amcl" name="amcl">
+    <!-- Initial position on the meeting room -->
+    <param name="initial_pose_x" value="14.637" />
+    <param name="initial_pose_y" value="-36.187" />
+    <param name="initial_pose_a" value="2.102" />
+<!--  2.118 -->
+    <!-- Number of particles -->
+    <param name="max_particles" value="5000"/>
+    <param name="min_particles" value="20"/>
+
+    <!-- Tolerance of the time diff of the transformation to send -->
+    <param name="transform_tolerance" value="1.0" />
+
+    <!-- Odometry parameters -->
+    <param name="odom_model_type" value="diff"/>
+    <!-- angle std dev -->
+    <param name="odom_alpha1" value="0.4"/>
+    <param name="odom_alpha2" value="0.5"/>
+    <!-- translation std dev -->
+    <param name="odom_alpha3" value="0.2"/>
+    <param name="odom_alpha4" value="0.2"/>
+
+    <param name="laser_model_type" value="likelihood_field"/>
+    <param name="laser_z_hit" value="0.8"/>
+    <param name="laser_z_rand" value="0.2"/>
+    <param name="laser_sigma_hit" value="0.2"/>
+    <param name="laser_likelihood_max_dist" value="30.0"/>
+
+    <!-- Changes greater than 15cm update the filter -->
+    <param name="update_min_d" value="0.05"/>
+    <!-- Changes greater than 10 degrees update the filter (0.0349 = 2 degrees, 0.17 = 10 degrees, 0.34 = 20 degrees, 0.52 = 30 degrees) -->
+    <param name="update_min_a" value="0.0349"/>
+    <!-- Which one os the odometry frame of reference -->
+    <param name="odom_frame_id" value="odom"/>
+  </node>
+</launch>

@@ -1,0 +1,42 @@
+<launch>
+  <param name="/use_sim_time" value="true"/>
+  <node name="real_map_server" pkg="map_server" type="map_server" args="$(find icl_robot)/maps/doc_real.yaml"/>
+  <node pkg="amcl" type="amcl" name="amcl">
+    <!-- Number of particles -->
+    <param name="max_particles" value="5000"/>
+    <param name="min_particles" value="20"/>
+
+    <!-- Tolerance of the time diff of the transformation to send -->
+    <param name="transform_tolerance" value="1.0" />
+
+    <!-- Odometry parameters -->
+    <param name="odom_model_type" value="diff"/>
+    <!-- angle std dev -->
+    <param name="odom_alpha1" value="1.0"/>
+    <param name="odom_alpha2" value="0.6"/>
+    <!-- translation std dev -->
+    <param name="odom_alpha3" value="0.2"/>
+    <param name="odom_alpha4" value="0.8"/>
+
+    <param name="laser_model_type" value="likelihood_field"/>
+    <param name="laser_z_hit" value="0.8"/>
+    <param name="laser_z_rand" value="0.2"/>
+    <param name="laser_sigma_hit" value="0.2"/>
+    <param name="laser_likelihood_max_dist" value="20.0"/>
+
+    <!-- Changes greater than 15cm update the filter -->
+    <param name="update_min_d" value="0.05"/>
+    <!-- Changes greater than 10 degrees update the filter (0.0349 = 2 degrees, 0.17 = 10 degrees, 0.34 = 20 degrees, 0.52 = 30 degrees) -->
+    <param name="update_min_a" value="0.085"/>
+    <!-- Which one os the odometry frame of reference -->
+    <param name="odom_frame_id" value="odom"/>
+  </node>
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0.1397 0.0 0.325 0.0085 0.055 0.0 /base_link /laser 100" />
+  <node pkg="tf" type="static_transform_publisher" name="kinect_on_robot" args="0.03 0.0 1.23 0 0.0 0 /base_link /openni_link 100" />
+  <node pkg="tf" type="static_transform_publisher" name="canon_on_robot" args="0.04 0.0 1.33 0 0 0 /base_link /canon_base 100" />
+
+  <include file="$(find openni_launch)/launch/openni.launch">
+    <arg name="load_driver" value="false"/>
+    <arg name="camera" value="openni"/>
+  </include>
+</launch>

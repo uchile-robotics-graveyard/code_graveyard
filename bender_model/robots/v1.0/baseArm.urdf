@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<robot name="origins">
+  <link name="base_link">
+   <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size=".053 .052 .04"/>
+      </geometry>
+      <material name="red">
+        <color rgba=".7 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="link2">
+    <visual>
+      <geometry>
+        <box size="0.053 .052 .05"/>
+      </geometry>
+      <material name="green">
+        <color rgba=".2 .7 .2 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz=".0265 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="base_to_link2" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
+    <parent link="base_link"/>
+    <child link="link2"/>
+    <origin xyz=".0265 0 0"/>
+  </joint>
+
+  <link name="link3">
+    <visual>
+      <geometry>
+        <box size="0.163 .058 .043"/>
+      </geometry>
+      <material name="yellow">
+        <color rgba=".7 .7 .2 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz=".0795 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="link2_to_link3" type="revolute">
+    <axis xyz="0 -1 0"/>
+    <limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
+    <parent link="link2"/>
+    <child link="link3"/>
+    <origin xyz=".053 0 0"/>
+  </joint>
+
+  <link name="link4">
+    <visual>
+      <geometry>
+        <box size="0.102 .046 .057"/>
+      </geometry>
+      <material name="yellow">
+        <color rgba=".7 .7 .2 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz=".051 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="link3_to_link4" type="revolute">
+    <axis xyz="0 -1 0"/>
+    <limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
+    <parent link="link3"/>
+    <child link="link4"/>
+    <origin xyz=".163 0 0"/>
+  </joint>
+
+  <link name="link5">
+    <visual>
+      <geometry>
+        <box size="0.045 .08 .035"/>
+      </geometry>
+      <material name="orange">
+        <color rgba=".7 .5 .2 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz=".0225 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="link4_to_link5" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
+    <parent link="link4"/>
+    <child link="link5"/>
+    <origin xyz=".102 0 0"/>
+  </joint>
+
+
+  <link name="pinza_A">
+    <visual>
+      <geometry>
+        <box size="0.14 .01 .035"/>
+      </geometry>
+      <material name="green">
+        <color rgba=".2 .7 .2 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz=".07 0 0"/>
+    </visual>
+  </link>
+
+<link name="pinza_B">
+    <visual>
+      <geometry>
+        <box size="0.14 .01 .035"/>
+      </geometry>
+      <material name="green">
+        <color rgba=".2 .7 .2 1"/>
+      </material>
+      <origin rpy="0 0 0" xyz=".07 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="link5_to_pinza_A" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
+    <parent link="link5"/>
+    <child link="pinza_A"/>
+    <origin xyz=".045 -.0225 0"/>
+  </joint>
+
+  <joint name="link5_to_pinza_B" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
+    <parent link="link5"/>
+    <child link="pinza_B"/>
+    <origin xyz=".045 .0225 0"/>
+  </joint>
+
+</robot>
+

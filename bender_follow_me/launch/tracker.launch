@@ -1,0 +1,12 @@
+<launch>
+
+	<arg name="limit_cb" default="-1"/>
+
+	<!-- Leg Detector -->
+	<node pkg="bender_follow_me" type="bayesian_filter" name="bayesian_filter" ns="/bender/follow_me">
+		<remap from="bayesian_filter/leg_detections" to="/bender/follow_me/leg_detections"/>
+		<remap from="bayesian_filter/ni_detections" to="/bender/follow_me/ni_detections"/>
+		<param name="limit_cb" value="$(arg limit_cb)"/>
+	</node>
+
+</launch>

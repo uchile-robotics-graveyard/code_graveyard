@@ -1,0 +1,10 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+    <!-- Left Arm Controller -->
+    <include file="$(find bender_arm)/launch/start_left_arm_controller.launch"/>
+
+    <!-- Left Planner -->
+    <node pkg="bender_arm" type="LeftArmPlanner" name="LeftArmPlanner" output="screen"/>
+
+</launch>

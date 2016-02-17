@@ -1,0 +1,1558 @@
+<sdf version='1.4'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='Bender'>
+      <link name='base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0.83 0 -0 0</pose>
+          <mass>50.3152</mass>
+          <inertia>
+            <ixx>11.6589</ixx>
+            <ixy>-4.30344e-05</ixy>
+            <ixz>7.88e-07</ixz>
+            <iyy>11.7336</iyy>
+            <iyz>0.0946959</iyz>
+            <izz>0.759348</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose>0 0 0.83 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/base_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose>0 0 0.83 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/base_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='leftfront'>
+        <pose>0.138878 -0.107074 0.101311 1.5708 0.275475 1.5708</pose>
+        <inertial>
+          <pose>1.34184e-05 -4.0728e-05 0.025 0 -0 0</pose>
+          <mass>1.45062</mass>
+          <inertia>
+            <ixx>0.00373086</ixx>
+            <ixy>8.14264e-07</ixy>
+            <ixz>4.37279e-19</ixz>
+            <iyy>0.00373307</iyy>
+            <iyz>-3.91063e-19</iyz>
+            <izz>0.00690566</izz>
+          </inertia>
+        </inertial>
+        <collision name='leftfront_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/leftfront.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='leftfront_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/leftfront.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Left_Front_Wheel' type='revolute'>
+        <child>leftfront</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>-1 -0 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='leftrear'>
+        <pose>0.138878 0.117074 0.101311 1.5708 0.275475 1.5708</pose>
+        <inertial>
+          <pose>1.34184e-05 -4.0728e-05 0.025 0 -0 0</pose>
+          <mass>1.45062</mass>
+          <inertia>
+            <ixx>0.00373086</ixx>
+            <ixy>8.14264e-07</ixy>
+            <ixz>4.62032e-19</ixz>
+            <iyy>0.00373307</iyy>
+            <iyz>-3.95754e-19</iyz>
+            <izz>0.00690566</izz>
+          </inertia>
+        </inertial>
+        <collision name='leftrear_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/leftrear.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='leftrear_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/leftrear.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Left_Rear_Wheel' type='revolute'>
+        <child>leftrear</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>-1 -0 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='left1'>
+        <pose>0.227118 -0.0004 1.26272 3.1187 -0.0011738 3.03786</pose>
+        <inertial>
+          <pose>-0.0290588 0.00299586 -0.0108483 0 -0 0</pose>
+          <mass>0.141614</mass>
+          <inertia>
+            <ixx>8.59507e-05</ixx>
+            <ixy>3.30623e-07</ixy>
+            <ixz>-2.96397e-06</ixz>
+            <iyy>8.77374e-05</iyy>
+            <iyz>-1.21731e-06</iyz>
+            <izz>7.00585e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='left1_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left1.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='left1_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left1.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Left_Shoulder_Y' type='revolute'>
+        <child>left1</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>-0.994623 0.103552 0.001174</xyz>
+          <limit>
+            <lower>-1.57</lower>
+            <upper>1.57</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='left2'>
+        <pose>0.267378 -0.00040173 1.25672 1.57108 0.00401527 -3.14159</pose>
+        <inertial>
+          <pose>9.15604e-07 -0.126057 -0.0196046 0 -0 0</pose>
+          <mass>0.0942334</mass>
+          <inertia>
+            <ixx>0.000341898</ixx>
+            <ixy>-1.75687e-09</ixy>
+            <ixz>-7.08771e-10</ixz>
+            <iyy>5.10964e-05</iyy>
+            <iyz>6.01112e-05</iyz>
+            <izz>0.000309633</izz>
+          </inertia>
+        </inertial>
+        <collision name='left2_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left2.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='left2_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left2.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Left_Shoulder_X' type='revolute'>
+        <child>left2</child>
+        <parent>left1</parent>
+        <axis>
+          <xyz>0 -1 0</xyz>
+          <limit>
+            <lower>-0.18</lower>
+            <upper>1.57</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='left3'>
+        <pose>0.267904 -0.0103195 1.1256 1.5748 -0.000378097 -1.54842</pose>
+        <inertial>
+          <pose>-0.0180187 -0.148673 0.000232898 0 -0 0</pose>
+          <mass>0.171298</mass>
+          <inertia>
+            <ixx>0.000802066</ixx>
+            <ixy>-4.00635e-05</ixy>
+            <ixz>8.71113e-08</ixz>
+            <iyy>6.48272e-05</iyy>
+            <iyz>-3.09848e-06</iyz>
+            <izz>0.000803003</izz>
+          </inertia>
+        </inertial>
+        <collision name='left3_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left3.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='left3_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left3.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Left_Shoulder_Z' type='revolute'>
+        <child>left3</child>
+        <parent>left2</parent>
+        <axis>
+          <xyz>-0.004015 0.000288 0.999992</xyz>
+          <limit>
+            <lower>-1.57</lower>
+            <upper>1.57</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='left4'>
+        <pose>0.268414 0.00551197 0.910098 -2.18513 -1.56384 2.20749</pose>
+        <inertial>
+          <pose>-0.0614599 -0.00188398 -0.000427239 0 -0 0</pose>
+          <mass>0.0934708</mass>
+          <inertia>
+            <ixx>3.88745e-05</ixx>
+            <ixy>1.80431e-06</ixy>
+            <ixz>-2.3395e-06</ixz>
+            <iyy>6.91729e-05</iyy>
+            <iyz>-7.1712e-08</iyz>
+            <izz>7.34975e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='left4_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left4.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='left4_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left4.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Left_Elbow_Y' type='revolute'>
+        <child>left4</child>
+        <parent>left3</parent>
+        <axis>
+          <xyz>-0.999742 -0.022373 -0.004008</xyz>
+          <limit>
+            <lower>-1</lower>
+            <upper>1.6</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='left5'>
+        <pose>0.268324 0.0188463 0.863078 -1.57653 -0.00393628 0.0349104</pose>
+        <inertial>
+          <pose>2.01668e-05 0.185347 0.0198164 0 -0 0</pose>
+          <mass>0.165671</mass>
+          <inertia>
+            <ixx>0.00167435</ixx>
+            <ixy>2.12566e-07</ixy>
+            <ixz>-5.36683e-09</ixz>
+            <iyy>5.79843e-05</iyy>
+            <iyz>-3.89021e-05</iyz>
+            <izz>0.00166685</izz>
+          </inertia>
+        </inertial>
+        <collision name='left5_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left5.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='left5_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left5.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Left_Elbow_Z' type='revolute'>
+        <child>left5</child>
+        <parent>left4</parent>
+        <axis>
+          <xyz>-0.004134 0.005591 0.999976</xyz>
+          <limit>
+            <lower>-1.3</lower>
+            <upper>1.3</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='left6'>
+        <pose>0.268962 0.0353338 0.555005 -1.5311 0.00393628 -3.10668</pose>
+        <inertial>
+          <pose>0.000354248 0.0619708 6.79341e-05 0 -0 0</pose>
+          <mass>0.0985948</mass>
+          <inertia>
+            <ixx>5.18235e-05</ixx>
+            <ixy>-3.30081e-07</ixy>
+            <ixz>9.05988e-11</ixz>
+            <iyy>4.86863e-05</iyy>
+            <iyz>-2.80503e-07</iyz>
+            <izz>8.00655e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='left6_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left6.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='left6_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left6.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Left_Wrist_Y' type='revolute'>
+        <child>left6</child>
+        <parent>left5</parent>
+        <axis>
+          <xyz>0.999383 0.034903 0.003936</xyz>
+          <limit>
+            <lower>-1.57</lower>
+            <upper>1.57</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='left_lil_grip'>
+        <pose>0.250895 0.0315502 0.475595 -0.0397138 -0.0334964 0.0360848</pose>
+        <inertial>
+          <pose>-0.00955109 0.000738162 -0.0237312 0 -0 0</pose>
+          <mass>0.0121266</mass>
+          <inertia>
+            <ixx>1.38106e-05</ixx>
+            <ixy>5.102e-08</ixy>
+            <ixz>8.86045e-07</ixz>
+            <iyy>1.13391e-05</iyy>
+            <iyz>1.26563e-07</iyz>
+            <izz>4.53805e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='left_lil_grip_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left_lil_grip.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='left_lil_grip_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left_lil_grip.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Left_1Finger' type='revolute'>
+        <child>left_lil_grip</child>
+        <parent>left6</parent>
+        <axis>
+          <xyz>-0.03472 0.998609 -0.039681</xyz>
+          <limit>
+            <lower>-0.5</lower>
+            <upper>1</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='left_big_grip'>
+        <pose>0.287273 0.0328206 0.475739 0.039851 0.0508722 -3.10464</pose>
+        <inertial>
+          <pose>-0.0103384 -0.000679122 -0.0330694 0 -0 0</pose>
+          <mass>0.0138792</mass>
+          <inertia>
+            <ixx>2.70582e-05</ixx>
+            <ixy>-5.50014e-08</ixy>
+            <ixz>1.36807e-06</ixz>
+            <iyy>2.20777e-05</iyy>
+            <iyz>-1.79652e-07</iyz>
+            <izz>7.48518e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='left_big_grip_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left_big_grip.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='left_big_grip_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/left_big_grip.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Left_2Fingers' type='revolute'>
+        <child>left_big_grip</child>
+        <parent>left6</parent>
+        <axis>
+          <xyz>0.03472 -0.998609 0.039681</xyz>
+          <limit>
+            <lower>-0.5</lower>
+            <upper>1</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='rightfront'>
+        <pose>-0.151122 -0.107074 0.101311 1.5708 0.228329 1.5708</pose>
+        <inertial>
+          <pose>1.34184e-05 -4.0728e-05 -0.025 0 -0 0</pose>
+          <mass>1.45062</mass>
+          <inertia>
+            <ixx>0.00373086</ixx>
+            <ixy>8.14264e-07</ixy>
+            <ixz>4.26433e-19</ixz>
+            <iyy>0.00373307</iyy>
+            <iyz>-4.83973e-19</iyz>
+            <izz>0.00690566</izz>
+          </inertia>
+        </inertial>
+        <collision name='rightfront_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/rightfront.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='rightfront_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/rightfront.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Right_Front_Wheel' type='revolute'>
+        <child>rightfront</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>1 0 -0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='rightrear'>
+        <pose>-0.151122 0.117074 0.101311 1.5708 0.275475 1.5708</pose>
+        <inertial>
+          <pose>1.34184e-05 -4.0728e-05 -0.025 0 -0 0</pose>
+          <mass>1.45062</mass>
+          <inertia>
+            <ixx>0.00373086</ixx>
+            <ixy>8.14264e-07</ixy>
+            <ixz>4.62033e-19</ixz>
+            <iyy>0.00373307</iyy>
+            <iyz>-3.95756e-19</iyz>
+            <izz>0.00690566</izz>
+          </inertia>
+        </inertial>
+        <collision name='rightrear_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/rightrear.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='rightrear_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/rightrear.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Right_Rear_Wheel' type='revolute'>
+        <child>rightrear</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>1 0 -0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='right1'>
+        <pose>-0.245722 0.0004 1.26272 -1.569 -0 3.14159</pose>
+        <inertial>
+          <pose>0.0228443 -0.0108784 0.00033274 0 -0 0</pose>
+          <mass>0.141614</mass>
+          <inertia>
+            <ixx>8.60312e-05</ixx>
+            <ixy>2.85909e-06</ixy>
+            <ixz>4.25184e-07</ixz>
+            <iyy>7.00077e-05</iyy>
+            <iyz>1.02464e-06</iyz>
+            <izz>8.77344e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='right1_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right1.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='right1_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right1.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Right_Shoulder_Y' type='revolute'>
+        <child>right1</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>-1 0 0</xyz>
+          <limit>
+            <lower>-1.57</lower>
+            <upper>1.57</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='right2'>
+        <pose>-0.279622 0.000417398 1.25672 1.5679 0.00639003 3.14157</pose>
+        <inertial>
+          <pose>9.38604e-07 -0.126057 -0.0196046 0 -0 0</pose>
+          <mass>0.0942334</mass>
+          <inertia>
+            <ixx>0.000341898</ixx>
+            <ixy>-1.82576e-09</ixy>
+            <ixz>-7.46785e-10</ixz>
+            <iyy>5.10964e-05</iyy>
+            <iyz>6.01112e-05</iyz>
+            <izz>0.000309633</izz>
+          </inertia>
+        </inertial>
+        <collision name='right2_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right2.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='right2_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right2.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Right_Shoulder_X' type='revolute'>
+        <child>right2</child>
+        <parent>right1</parent>
+        <axis>
+          <xyz>0 0.999996 0.0029</xyz>
+          <limit>
+            <lower>-0.18</lower>
+            <upper>1.57</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='right3'>
+        <pose>-0.278785 -0.00908279 1.12572 1.57722 0.00282999 -1.55993</pose>
+        <inertial>
+          <pose>-0.0180187 -0.148819 0.000232898 0 -0 0</pose>
+          <mass>0.171298</mass>
+          <inertia>
+            <ixx>0.000802066</ixx>
+            <ixy>-4.00635e-05</ixy>
+            <ixz>8.7111e-08</ixz>
+            <iyy>6.48272e-05</iyy>
+            <iyz>-3.09848e-06</iyz>
+            <izz>0.000803003</izz>
+          </inertia>
+        </inertial>
+        <collision name='right3_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right3.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='right3_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right3.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Right_Shoulder_Z' type='revolute'>
+        <child>right3</child>
+        <parent>right2</parent>
+        <axis>
+          <xyz>-0.00639 -0.0029 0.999975</xyz>
+          <limit>
+            <lower>-1.57</lower>
+            <upper>1.57</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='right4'>
+        <pose>-0.27758 0.00743909 0.910123 -1.92867 -1.55246 1.93947</pose>
+        <inertial>
+          <pose>-0.0614599 -0.00188398 -0.000427239 0 -0 0</pose>
+          <mass>0.0934708</mass>
+          <inertia>
+            <ixx>3.88745e-05</ixx>
+            <ixy>1.80431e-06</ixy>
+            <ixz>-2.3395e-06</ixz>
+            <iyy>6.91729e-05</iyy>
+            <iyz>-7.1712e-08</iyz>
+            <izz>7.34975e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='right4_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right4.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='right4_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right4.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Right_Elbow_Y' type='revolute'>
+        <child>right4</child>
+        <parent>right3</parent>
+        <axis>
+          <xyz>-0.999921 -0.010848 -0.006421</xyz>
+          <limit>
+            <lower>-0.25</lower>
+            <upper>1.6</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='right5'>
+        <pose>-0.277395 0.0202323 0.862868 -1.58792 -0.00653801 0.00403571</pose>
+        <inertial>
+          <pose>2.01668e-05 0.18526 0.0198164 0 -0 0</pose>
+          <mass>0.165671</mass>
+          <inertia>
+            <ixx>0.00167434</ixx>
+            <ixy>2.12565e-07</ixy>
+            <ixz>-5.36672e-09</ixz>
+            <iyy>5.79843e-05</iyy>
+            <iyz>-3.89021e-05</iyz>
+            <izz>0.00166685</izz>
+          </inertia>
+        </inertial>
+        <collision name='right5_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right5.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='right5_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right5.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Right_Elbow_Z' type='revolute'>
+        <child>right5</child>
+        <parent>right4</parent>
+        <axis>
+          <xyz>-0.006606 0.017099 0.999832</xyz>
+          <limit>
+            <lower>-1.3</lower>
+            <upper>1.3</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='right6'>
+        <pose>-0.275433 0.0331854 0.554718 -1.55103 0.00653801 -3.13756</pose>
+        <inertial>
+          <pose>0.000353535 0.0619708 -6.79337e-05 0 -0 0</pose>
+          <mass>0.0985948</mass>
+          <inertia>
+            <ixx>5.18235e-05</ixx>
+            <ixy>-3.29557e-07</ixy>
+            <ixz>8.12539e-10</ixz>
+            <iyy>4.86863e-05</iyy>
+            <iyz>2.80503e-07</iyz>
+            <izz>8.00655e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='right6_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right6.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='right6_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right6.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Right_Wrist_Y' type='revolute'>
+        <child>right6</child>
+        <parent>right5</parent>
+        <axis>
+          <xyz>-0.99997 -0.004036 -0.006538</xyz>
+          <limit>
+            <lower>-1.57</lower>
+            <upper>1.57</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='right_lil_grip'>
+        <pose>-0.257008 0.03169 0.475452 0.0206919 0.299482 -3.13158</pose>
+        <inertial>
+          <pose>-0.00955109 0.000738162 -0.0237312 0 -0 0</pose>
+          <mass>0.0121266</mass>
+          <inertia>
+            <ixx>1.38106e-05</ixx>
+            <ixy>5.102e-08</ixy>
+            <ixz>8.86045e-07</ixz>
+            <iyy>1.13391e-05</iyy>
+            <iyz>1.26563e-07</iyz>
+            <izz>4.53805e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='right_lil_grip_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right_lil_grip.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='right_lil_grip_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right_lil_grip.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Right_1Finger' type='revolute'>
+        <child>right_lil_grip</child>
+        <parent>right6</parent>
+        <axis>
+          <xyz>0.003906 -0.999797 0.01977</xyz>
+          <limit>
+            <lower>-0.5</lower>
+            <upper>1</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='right_big_grip'>
+        <pose>-0.293407 0.0315431 0.475214 -0.0202003 0.237354 -0.000700115</pose>
+        <inertial>
+          <pose>-0.0103384 -0.000679122 -0.0330694 0 -0 0</pose>
+          <mass>0.0138792</mass>
+          <inertia>
+            <ixx>2.70582e-05</ixx>
+            <ixy>-5.50014e-08</ixy>
+            <ixz>1.36807e-06</ixz>
+            <iyy>2.20777e-05</iyy>
+            <iyz>-1.79652e-07</iyz>
+            <izz>7.48518e-06</izz>
+          </inertia>
+        </inertial>
+        <collision name='right_big_grip_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right_big_grip.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='right_big_grip_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/gonzalo/catkin_ws/src/bender_model/meshes/v2.0/right_big_grip.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='Right_2Fingers' type='revolute'>
+        <child>right_big_grip</child>
+        <parent>right6</parent>
+        <axis>
+          <xyz>-0.003906 0.999797 -0.01977</xyz>
+          <limit>
+            <lower>-0.5</lower>
+            <upper>1</upper>
+            <effort>0</effort>
+            <velocity>1</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <pose>0 0 0.1 0 -0 0</pose>
+      <static>0</static>
+    </model>
+    <state world_name='default'>
+      <sim_time>362 729000000</sim_time>
+      <real_time>370 88474212</real_time>
+      <wall_time>1415134232 810208809</wall_time>
+      <model name='Bender'>
+        <pose>0.01977 0.06649 -0.00144 -2e-05 0.000274 0.014641</pose>
+        <link name='base_link'>
+          <pose>0.01977 0.06649 -0.00144 -2e-05 0.000274 0.014641</pose>
+          <velocity>6e-05 -0.000125 -0.0063 -0.000133 -6e-06 0.000102</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='left1'>
+          <pose>0.247216 0.069445 1.26122 -3.14092 -0.001445 3.0525</pose>
+          <velocity>4.2e-05 8.3e-05 -0.005838 -0.169793 0.015014 0.00032</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='left2'>
+          <pose>0.287458 0.069892 1.25511 1.59453 0.051465 -3.12566</pose>
+          <velocity>-0.000197 -0.000869 -0.006341 -0.167472 -0.027575 0.000172</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='left3'>
+          <pose>0.294394 0.057011 1.12443 1.54595 -0.050939 0.037531</pose>
+          <velocity>0.003412 -0.022724 -0.00399 -0.167526 -0.027992 0.000133</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='left4'>
+          <pose>0.289691 0.051478 0.908468 -1.29044 -1.48103 2.89857</pose>
+          <velocity>0.009462 -0.058846 -0.003102 -0.17385 0.129503 -0.00412</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='left5'>
+          <pose>0.280235 0.049965 0.860541 -1.63244 0.065295 2.14092</pose>
+          <velocity>0.003137 -0.067137 -0.001641 -0.378161 0.180168 2.33399</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='left6'>
+          <pose>0.291761 0.033443 0.552685 -1.63818 -0.065297 -1.00067</pose>
+          <velocity>-0.0138 -0.156636 0.002512 -0.191359 -0.111904 2.35662</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='left_big_grip'>
+          <pose>0.280409 0.041243 0.472467 -0.071758 -0.357318 -0.979737</pose>
+          <velocity>-0.023272 -0.198735 -0.00029 -0.854807 -0.532027 2.40952</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='left_lil_grip'>
+          <pose>0.300015 0.010665 0.474841 0.07111 -0.331188 2.11336</pose>
+          <velocity>0.048629 -0.152122 0.007776 0.617033 0.400085 2.29219</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='leftfront'>
+          <pose>0.160229 -0.038537 0.099835 1.57113 0.582032 1.58562</pose>
+          <velocity>0.000145 -4e-05 -0.006143 0.001697 -0.000172 0.000171</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='leftrear'>
+          <pose>0.156947 0.185587 0.099833 1.57177 1.28 1.58637</pose>
+          <velocity>0.0001 -4.1e-05 -0.006845 0.000556 -0.000148 8e-05</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='right1'>
+          <pose>-0.225585 0.063323 1.26135 -1.5581 -0.00028 -3.12695</pose>
+          <velocity>8.3e-05 9e-06 -0.006146 -0.035286 -0.002906 0.000101</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='right2'>
+          <pose>-0.259482 0.062778 1.25536 1.5788 0.045489 -3.12659</pose>
+          <velocity>-7.7e-05 -2.8e-05 -0.006129 -0.038015 0.170044 -0.000836</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='right3'>
+          <pose>-0.253367 0.05194 1.1246 1.56234 -0.045407 0.025091</pose>
+          <velocity>-0.022297 -0.00495 -0.006566 -0.037252 0.170423 -0.002516</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='right4'>
+          <pose>-0.259412 0.049963 0.908461 -1.4627 -1.49234 3.05854</pose>
+          <velocity>-0.059242 -0.013029 -0.005396 -0.029393 -0.144556 -1.9e-05</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='right5'>
+          <pose>-0.269294 0.049333 0.860516 -1.62587 0.055901 2.2799</pose>
+          <velocity>-0.052348 -0.014475 -0.006629 -0.218649 -0.126663 2.40266</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='right6'>
+          <pose>-0.259017 0.035444 0.552572 -1.64931 -0.055904 -0.861698</pose>
+          <velocity>0.020055 -0.057165 -0.002238 0.134802 -0.53963 2.43293</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='right_big_grip'>
+          <pose>-0.248836 0.014013 0.474573 0.080039 -0.199378 2.25981</pose>
+          <velocity>0.114334 -0.021963 0.000396 0.13465 -0.539861 2.43291</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='right_lil_grip'>
+          <pose>-0.272501 0.041596 0.47254 -0.081168 -0.262247 -0.845004</pose>
+          <velocity>0.048247 -0.079166 -0.008626 0.134991 -0.539576 2.43286</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='rightfront'>
+          <pose>-0.12974 -0.042783 0.099916 1.57111 0.485741 1.58559</pose>
+          <velocity>0.000149 -8.1e-05 -0.006611 0.001439 -0.00011 5.2e-05</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='rightrear'>
+          <pose>-0.133022 0.181341 0.099908 1.57134 1.02931 1.5859</pose>
+          <velocity>8.5e-05 -7.3e-05 -0.005628 0.00144 -0.000272 0.000311</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>1.68416 -1.8643 1.76212 -3.05024e-17 0.427643 2.3362</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+  </world>
+</sdf>

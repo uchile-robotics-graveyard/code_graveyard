@@ -1,0 +1,34 @@
+
+# - - Main parameters - -
+
+# output coordinate frame
+tf_frame_out: "/bender/base_link"
+
+# kinect coordinate frame
+kinect_frame_id: "/bender/sensors/rgbd_waist_link"
+
+# obs: if 'tf_frame_out' == 'kinect_frame_id', then no calls 
+# will be made to the tf library. Otherwise, the node will 
+# require a path between both frames in the tf tree. 
+#
+# tl;dr : simply do $ roslaunch bender_tf tf.launch
+
+
+# Center of Mass limits [m]
+max_person_CoM_height: 1.4
+min_person_CoM_height: 0.8
+
+# Openni configuration filename
+ni_config_filename: "SamplesConfig.xml"
+
+
+# - - drawing configuration - -
+
+# obs: computing the depth image consumes a lot of resources,
+# so prefer relying on marker over images publications!
+
+# true for publishing NI detections as depth images
+publish_images:  true
+
+# draw background vs using a plain color
+draw_background: true

@@ -1,0 +1,95 @@
+define hokuyo laser
+(
+  range_max 30.0
+  fov 220.0
+  samples 181
+  # generic model properties
+  color "black"
+  size [ 0.050 0.050 0.100 ]
+)
+
+define icl_icare position
+(
+  #size [0.415 0.392 0.25]
+  size [0.350 0.350 0.250]
+  origin [-0.050 0 0 0]
+  gui_nose 1
+  drive "diff"
+  hokuyo(pose [ 0.050 0 0 0 ])
+)
+
+define person position
+(
+#  polygons 1
+#  polygon[0].points 6
+#  polygon[0].point[0] [-1 0]
+#  polygon[0].point[1] [-0.5 0.866]
+#  polygon[0].point[2] [0.5 0.866]
+#  polygon[0].point[3] [1 0]
+#  polygon[0].point[4] [0.5 -0.866]
+#  polygon[0].point[5] [-0.5 -0.866]
+  size [0.400 0.500 1.700]
+  origin [0 0 0 0]
+  drive "omni"
+  hokuyo(pose [ 0 0 0 0 ])
+)
+
+define floorplan model
+(
+  # sombre, sensible, artistic
+  color "gray30"
+
+  # most maps will need a bounding box
+  boundary 1
+
+  gui_nose 0
+  gui_grid 0
+
+  gui_outline 0
+  gripper_return 0
+  fiducial_return 0
+  laser_return 1
+)
+
+# set the resolution of the underlying raytrace model in meters
+resolution 0.05
+
+interval_sim 20  # simulation timestep in milliseconds
+
+window
+( 
+  size [ 1056.000 763.000 ] 
+  rotate [ 0 0 ]
+  scale 28.806 
+)
+
+# load an environment bitmap
+floorplan
+( 
+  name "corridor"
+  bitmap "square.pgm"
+  size [36.560 25.040 0.500]
+  pose [0 0 0 0]
+)
+
+# throw in a robot
+icl_icare
+(
+  pose [ 0 0 0 0]
+  name "i_care"
+  color "blue"
+)
+
+person
+(
+  pose [ 4 0 0 0]
+  name "person_0"
+  color "red"
+)
+
+person
+(
+  pose [ 5 6 0 0]
+  name "person_0"
+  color "red"
+)

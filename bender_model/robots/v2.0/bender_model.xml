@@ -1,0 +1,1123 @@
+<?xml version="1.0"?>
+<robot
+  name="bender_model">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.83"
+        rpy="0 0 0" />
+      <mass
+        value="50.3151699148111" />
+      <inertia
+        ixx="11.6588826649651"
+        ixy="-4.30344462483339E-05"
+        ixz="7.88000475770298E-07"
+        iyy="11.7336277627393"
+        iyz="0.0946959489587158"
+        izz="0.75934824261548" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0.83"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/base_link.STL" />
+      </geometry>
+      <material
+        name="Cuerpo">
+        <color
+          rgba="0.4 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0.83"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left1">
+    <inertial>
+      <origin
+        xyz="-0.0290587729918605 0.00299585732633992 -0.0108483243870291"
+        rpy="0 0 0" />
+      <mass
+        value="0.141614061118655" />
+      <inertia
+        ixx="8.59507422374021E-05"
+        ixy="3.30622939455422E-07"
+        ixz="-2.96396886119997E-06"
+        iyy="8.77374210625964E-05"
+        iyz="-1.21730920804437E-06"
+        izz="7.00584542660192E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left1.STL" />
+      </geometry>
+      <material
+        name="Gris1">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Shoulder_Y"
+    type="revolute">
+    <origin
+      xyz="0.227118003434409 -0.000399999999999943 1.262718494966575"
+      rpy="3.11869536380843 -0.00117380179959829 3.03785504412187" />
+    <parent
+      link="base_link" />
+    <child
+      link="left1" />
+    <axis
+      xyz="1 0 0" />
+	<limit effort="0" lower="-1.57" upper="1.57" velocity="1"/>
+  </joint>
+  <link
+    name="left2">
+    <inertial>
+      <origin
+        xyz="9.1560381110245E-07 -0.126057167551255 -0.019604553506645"
+        rpy="0 0 0" />
+      <mass
+        value="0.0942334181417436" />
+      <inertia
+        ixx="0.00034189770982629"
+        ixy="-1.75686789927443E-09"
+        ixz="-7.08771033756509E-10"
+        iyy="5.1096433281558E-05"
+        iyz="6.01111843977241E-05"
+        izz="0.000309632767145305" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left2.STL" />
+      </geometry>
+      <material
+        name="Gris2">
+        <color
+          rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Shoulder_X"
+    type="revolute">
+    <origin
+      xyz="-0.0400504693260816 0.00402985050187721 0.00604684220924334"
+      rpy="-1.54761217408236 -0.0028105579327451 -0.103829193218598" />
+    <parent
+      link="left1" />
+    <child
+      link="left2" />
+    <axis
+      xyz="0 0 -0.99999999999933" />
+	<limit effort="0" lower="-.18" upper="1.57" velocity="1"/>
+  </joint>
+  <link
+    name="left3">
+    <inertial>
+      <origin
+        xyz="-0.0180187389344932 -0.148672548387512 0.000232898170139606"
+        rpy="0 0 0" />
+      <mass
+        value="0.171298468493732" />
+      <inertia
+        ixx="0.000802066113398422"
+        ixy="-4.00634921292544E-05"
+        ixz="8.71113147346983E-08"
+        iyy="6.48272455639881E-05"
+        iyz="-3.09847747670905E-06"
+        izz="0.000803002800579645" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba=".2 .2 .2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Shoulder_Z"
+    type="revolute">
+    <origin
+      xyz="0 -0.131124083989702 -0.00987999999999293"
+      rpy="3.14159265358975 1.54842173571793 3.14159265325592" />
+    <parent
+      link="left2" />
+    <child
+      link="left3" />
+    <axis
+      xyz="0 1 0" />
+	<limit effort="0" lower="-1.57" upper="1.57" velocity="1"/>
+  </joint>
+  <link
+    name="left4">
+    <inertial>
+      <origin
+        xyz="-0.0614599061788646 -0.00188397522420721 -0.000427239424550974"
+        rpy="0 0 0" />
+      <mass
+        value="0.0934708266949778" />
+      <inertia
+        ixx="3.88745283189716E-05"
+        ixy="1.80430577143483E-06"
+        ixz="-2.3394961601393E-06"
+        iyy="6.91728779132096E-05"
+        iyz="-7.17120315053314E-08"
+        izz="7.34974844333919E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba=".4 .4 .4 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Elbow_Y"
+    type="revolute">
+    <origin
+      xyz="-0.0158976187840783 -0.2154959160103 0"
+      rpy="-2.00534033822919E-15 3.14627338939E-15 1.57610005184037" />
+    <parent
+      link="left3" />
+    <child
+      link="left4" />
+    <axis
+      xyz="0 0 1" />
+	<limit effort="0" lower="-1" upper="1.6" velocity="1"/>  </joint>
+  <link
+    name="left5">
+    <inertial>
+      <origin
+        xyz="2.0166756983242E-05 0.185347093616964 0.0198163829228617"
+        rpy="0 0 0" />
+      <mass
+        value="0.165671046236716" />
+      <inertia
+        ixx="0.00167434500902776"
+        ixy="2.12565547151558E-07"
+        ixz="-5.36682830829663E-09"
+        iyy="5.79843285836865E-05"
+        iyz="-3.89021196834984E-05"
+        izz="0.00166684901396813" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba=".2 .2 .2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Elbow_Z"
+    type="revolute">
+    <origin
+      xyz="-0.0469436366196784 0.0136000000000005 -2.00000000019629E-05"
+      rpy="-3.37316308658477E-16 1.55826061740133 1.5707963267949" />
+    <parent
+      link="left4" />
+    <child
+      link="left5" />
+    <axis
+      xyz="0 -1 0" />
+	<limit effort="0" lower="-1.3" upper="1.3" velocity="1"/>
+  </joint>
+  <link
+    name="left6">
+    <inertial>
+      <origin
+        xyz="0.000354247611982939 0.0619708045870025 6.79341313507553E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0985947948867177" />
+      <inertia
+        ixx="5.18235078785412E-05"
+        ixy="-3.30080707581679E-07"
+        ixz="9.05987734434608E-11"
+        iyy="4.86863057187854E-05"
+        iyz="-2.80502896365857E-07"
+        izz="8.00654647990267E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 .2 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Wrist_Y"
+    type="revolute">
+    <origin
+      xyz="0 0.307976363380325 0.0182205958877346"
+      rpy="-3.10763243631824 3.40005801291454E-16 3.14159265358979" />
+    <parent
+      link="left5" />
+    <child
+      link="left6" />
+    <axis
+      xyz="-1 0 0" />
+	<limit effort="0" lower="-1.57" upper="1.57" velocity="1"/>
+  </joint>
+  <link
+    name="left_big_grip">
+    <inertial>
+      <origin
+        xyz="-0.0103384032153078 -0.000679121871313346 -0.0330693689648484"
+        rpy="0 0 0" />
+      <mass
+        value="0.0138792012652351" />
+      <inertia
+        ixx="2.70582230217656E-05"
+        ixy="-5.50013928731075E-08"
+        ixz="1.36806624721733E-06"
+        iyy="2.20777162398364E-05"
+        iyz="-1.79652146039198E-07"
+        izz="7.48517952339133E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left_big_grip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 .2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left_big_grip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_2Fingers"
+    type="revolute">
+    <origin
+      xyz="-0.0178999999999936 0.0794000000000014 0"
+      rpy="1.57089559559538 -0.000171938604067984 0.0469797762472183" />
+    <parent
+      link="left6" />
+    <child
+      link="left_big_grip" />
+    <axis
+      xyz="0.000171938603209174 0.999999980291411 -9.92687988491461E-05" />
+	<limit effort="0" lower="-0.5" upper="1" velocity="1"/>
+  </joint>
+  <link
+    name="left_lil_grip">
+    <inertial>
+      <origin
+        xyz="-0.0095510903809069 0.000738162373008222 -0.0237311721616263"
+        rpy="0 0 0" />
+      <mass
+        value="0.0121265987874835" />
+      <inertia
+        ixx="1.3810561887139E-05"
+        ixy="5.1020018460646E-08"
+        ixz="8.8604516043731E-07"
+        iyy="1.13391340857932E-05"
+        iyz="1.26562891616881E-07"
+        izz="4.53805426904613E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left_lil_grip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 .2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/left_lil_grip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_1Finger"
+    type="revolute">
+    <origin
+      xyz="0.0185000000000056 0.0794000000000014 0"
+      rpy="-1.5707963267949 -4.23272528138341E-16 -3.11200924119179" />
+    <parent
+      link="left6" />
+    <child
+      link="left_lil_grip" />
+    <axis
+      xyz="0 1 0" />
+	<limit effort="0" lower="-0.5" upper="1" velocity="1"/>
+  </joint>
+  <link
+    name="right1">
+    <inertial>
+      <origin
+        xyz="0.0228442584410578 -0.0108784306731328 0.000332740382114804"
+        rpy="0 0 0" />
+      <mass
+        value="0.141614061117745" />
+      <inertia
+        ixx="8.6031188781149E-05"
+        ixy="2.85908523268965E-06"
+        ixz="4.25183722573212E-07"
+        iyy="7.00077350519818E-05"
+        iyz="1.02464396679819E-06"
+        izz="8.77344028199724E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba=".2 .2 .2  1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Shoulder_Y"
+    type="revolute">
+    <origin
+      xyz="-0.245722288556089 0.000400000000000493 1.262718494966575"
+      rpy="-1.56899655511053 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="right1" />
+    <axis
+      xyz="1 0 0" />
+	<limit effort="0" lower="-1.57" upper="1.57" velocity="1"/>
+  </joint>
+  <link
+    name="right2">
+    <inertial>
+      <origin
+        xyz="9.38604474753912E-07 -0.126057166549156 -0.0196045539774072"
+        rpy="0 0 0" />
+      <mass
+        value="0.0942334203845838" />
+      <inertia
+        ixx="0.000341897716604716"
+        ixy="-1.82576333803537E-09"
+        ixz="-7.46785412548781E-10"
+        iyy="5.10964334890975E-05"
+        iyz="6.01111830515075E-05"
+        izz="0.000309632774272967" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba=".4 .4 .4 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Shoulder_X"
+    type="revolute">
+    <origin
+      xyz="0.0338999999999997 0.0059999337477466 -2.81961461170237E-05"
+      rpy="3.13689337454941 3.00289675034777E-05 0.00638998822659482" />
+    <parent
+      link="right1" />
+    <child
+      link="right2" />
+    <axis
+      xyz="0 0 1" />
+	<limit effort="0" lower="-.18" upper="1.57" velocity="1"/>
+  </joint>
+  <link
+    name="right3">
+    <inertial>
+      <origin
+        xyz="-0.0180187386539673 -0.148818967278195 0.000232898201658893"
+        rpy="0 0 0" />
+      <mass
+        value="0.171298453845451" />
+      <inertia
+        ixx="0.000802065989861411"
+        ixy="-4.00634869109035E-05"
+        ixz="8.71110062946987E-08"
+        iyy="6.48272480884714E-05"
+        iyz="-3.09847700105537E-06"
+        izz="0.000803002681893564" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba=".2 .2 .2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Shoulder_Z"
+    type="revolute">
+    <origin
+      xyz="0 -0.130977673011017 -0.00988000000000066"
+      rpy="3.14159265358964 1.55992909716036 3.14159265358964" />
+    <parent
+      link="right2" />
+    <child
+      link="right3" />
+    <axis
+      xyz="0 1 0" />
+	<limit effort="0" lower="-1.57" upper="1.57" velocity="1"/>
+  </joint>
+  <link
+    name="right4">
+    <inertial>
+      <origin
+        xyz="-0.0614599061742876 -0.00188397521850367 -0.00042723942500178"
+        rpy="0 0 0" />
+      <mass
+        value="0.0934708266720449" />
+      <inertia
+        ixx="3.88745282783367E-05"
+        ixy="1.804305764043E-06"
+        ixz="-2.33949615967735E-06"
+        iyy="6.91728778843843E-05"
+        iyz="-7.17120313776631E-08"
+        izz="7.34974844096743E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.4 .4 .4 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Elbow_Y"
+    type="revolute">
+    <origin
+      xyz="-0.015897618784079 -0.215642326988983 0"
+      rpy="-1.5109441475758E-15 1.40967966466565E-15 1.59079716801769" />
+    <parent
+      link="right3" />
+    <child
+      link="right4" />
+    <axis
+      xyz="0 0 1" />
+	<limit effort="0" lower="-.25" upper="1.6" velocity="1"/>
+  </joint>
+  <link
+    name="right5">
+    <inertial>
+      <origin
+        xyz="2.01667830364571E-05 0.185260314685699 0.0198163828105945"
+        rpy="0 0 0" />
+      <mass
+        value="0.165671045822528" />
+      <inertia
+        ixx="0.00167434499857591"
+        ixy="2.12564731790839E-07"
+        ixz="-5.36671705997486E-09"
+        iyy="5.79843284307548E-05"
+        iyz="-3.89021187140611E-05"
+        izz="0.00166684900355265" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba=".2 .2 .2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Elbow_Z"
+    type="revolute">
+    <origin
+      xyz="-0.0470304161431023 0.0136 -1.99999999996314E-05"
+      rpy="3.14159265358979 1.56398230191069 -1.5707963267949" />
+    <parent
+      link="right4" />
+    <child
+      link="right5" />
+    <axis
+      xyz="0 -1 0" />
+	<limit effort="0" lower="-1.3" upper="1.3" velocity="1"/>
+  </joint>
+  <link
+    name="right6">
+    <inertial>
+      <origin
+        xyz="0.000353535336957866 0.0619708043031083 -6.79336750945836E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0985947878069915" />
+      <inertia
+        ixx="5.18235067634952E-05"
+        ixy="-3.29556842574704E-07"
+        ixz="8.12538530440897E-10"
+        iyy="4.86863099945673E-05"
+        iyz="2.80502511845457E-07"
+        izz="8.00654683910143E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 .2 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Wrist_Y"
+    type="revolute">
+    <origin
+      xyz="0 0.307889583856898 0.018220595887735"
+      rpy="-3.13894806185769 -3.12250225675825E-17 -3.14159265358979" />
+    <parent
+      link="right5" />
+    <child
+      link="right6" />
+    <axis
+      xyz="1 0 0" />
+	<limit effort="0" lower="-1.57" upper="1.57" velocity="1"/>
+  </joint>
+  <link
+    name="right_big_grip">
+    <inertial>
+      <origin
+        xyz="-0.0103384032156852 -0.0006791218713285 -0.0330693689645238"
+        rpy="0 0 0" />
+      <mass
+        value="0.0138792012650545" />
+      <inertia
+        ixx="2.70582230215702E-05"
+        ixy="-5.50013928560337E-08"
+        ixz="1.36806624720587E-06"
+        iyy="2.20777162399686E-05"
+        iyz="-1.79652146095452E-07"
+        izz="7.48517952324457E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right_big_grip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 .2 1" />
+      </material>
+    </visual>Front
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right_big_grip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_2Fingers"
+    type="revolute">
+    <origin
+      xyz="0.0185000000000081 0.0794000000000002 0"
+      rpy="-1.57069705799441 0.000171938604064303 2.89765542028772" />
+    <parent
+      link="right6" />
+    <child
+      link="right_big_grip" />
+    <axis
+      xyz="0.000171938603211714 0.999999980291411 -9.92687988657023E-05" />
+	<limit effort="0" lower="-.5" upper="1" velocity="1"/>
+  </joint>
+  <link
+    name="right_lil_grip">
+    <inertial>
+      <origin
+        xyz="-0.00955109038088159 0.00073816237295854 -0.0237311721615484"
+        rpy="0 0 0" />
+      <mass
+        value="0.0121265987874542" />
+      <inertia
+        ixx="1.38105618871874E-05"
+        ixy="5.10200184661109E-08"
+        ixz="8.86045160460116E-07"
+        iyy="1.13391340858629E-05"
+        iyz="1.26562891633643E-07"
+        izz="4.53805426904168E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right_lil_grip.STL" />
+      </geometry>
+      <material
+        name="Fibra">
+        <color
+          rgba="0 0 .2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/right_lil_grip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_1Finger"
+    type="revolute">
+    <origin
+      xyz="-0.0178999999999919 0.0794 0"
+      rpy="1.57079632679489 1.1067535776732E-15 0.293002959066723" />
+    <parent
+      link="right6" />
+    <child
+      link="right_lil_grip" />
+    <axis
+      xyz="0 1 0" />
+	<limit effort="0" lower="-.5" upper="1" velocity="1"/>
+  </joint>
+  <link
+    name="leftfront">
+    <inertial>
+      <origin
+        xyz="1.34184427433015E-05 -4.07280413367017E-05 0.0250000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="1.45062296718905" />
+      <inertia
+        ixx="0.0037308621655104"
+        ixy="8.14264298157113E-07"
+        ixz="4.37279033041608E-19"
+        iyy="0.00373306537264629"
+        iyz="-3.91062795606366E-19"
+        izz="0.00690566052978366" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/leftfront.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba=".08 .08 .08 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/leftfront.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Front_Wheel"
+    type="continuous">
+    <origin
+      xyz="0.13887771144391 -0.107074368738204 0.101311463451082"
+      rpy="1.5707963267949 0.275474858894788 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="leftfront" />
+    <axis
+      xyz="0 0 -1" />
+	<limit effort="0" lower="0" upper="3.14" velocity="1"/>
+  </joint>
+  <link
+    name="leftrear">
+    <inertial>
+      <origin
+        xyz="1.34184427433293E-05 -4.07280413367017E-05 0.0250000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="1.45062296718905" />
+      <inertia
+        ixx="0.0037308621655104"
+        ixy="8.14264298157276E-07"
+        ixz="4.6203234703441E-19"
+        iyy="0.00373306537264629"
+        iyz="-3.95753714643763E-19"
+        izz="0.00690566052978366" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/leftrear.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba=".08 .08 .08 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/leftrear.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Left_Rear_Wheel"
+    type="continuous">
+    <origin
+      xyz="0.13887771144391 0.117074368738204 0.101311463451082"
+      rpy="1.5707963267949 0.275474858894788 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="leftrear" />
+    <axis
+      xyz="0 0 -1" />
+	<limit effort="0" lower="0" upper="3.14" velocity="1"/>
+  </joint>
+  <link
+    name="rightfront">
+    <inertial>
+      <origin
+        xyz="1.34184427432738E-05 -4.07280413367017E-05 -0.0250000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="1.45062296718905" />
+      <inertia
+        ixx="0.0037308621655104"
+        ixy="8.14264298157059E-07"
+        ixz="4.26432911898177E-19"
+        iyy="0.00373306537264629"
+        iyz="-4.83973328023502E-19"
+        izz="0.00690566052978365" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/rightfront.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba=".08 .08 .08 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/rightfront.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Front_Wheel"
+    type="continuous">
+    <origin
+      xyz="-0.151122288556089 -0.107074368738204 0.101311463451082"
+      rpy="1.5707963267949 0.228329155152495 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="rightfront" />
+    <axis
+      xyz="0 0 1" />
+	<limit effort="0" lower="0" upper="3.14" velocity="1"/>
+  </joint>
+  <link
+    name="rightrear">
+    <inertial>
+      <origin
+        xyz="1.34184427432738E-05 -4.07280413367017E-05 -0.0250000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="1.45062296718905" />
+      <inertia
+        ixx="0.0037308621655104"
+        ixy="8.14264298157113E-07"
+        ixz="4.62032590878053E-19"
+        iyy="0.00373306537264629"
+        iyz="-3.95755754073324E-19"
+        izz="0.00690566052978366" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/rightrear.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba=".08 .08 .08 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v2.0/rightrear.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Right_Rear_Wheel"
+    type="continuous">
+    <origin
+      xyz="-0.15112228855609 0.117074368738204 0.101311463451082"
+      rpy="1.5707963267949 0.275474858894788 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="rightrear" />
+    <axis
+      xyz="0 0 1" />
+	<limit effort="0" lower="0" upper="3.14" velocity="1"/>
+  </joint>
+</robot>

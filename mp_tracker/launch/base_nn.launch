@@ -1,0 +1,10 @@
+<launch>
+  <node pkg="multi_tracker" type="laser_multi_tracker" name="nn_tracker">
+    <param name="pointcloud_topic" value="/openni/depth_registered/points"/>
+    <param name="camera_topic" value="/openni/rgb/image_color"/>
+    <param name="camera_info_topic" value="/openni/rgb/camera_info"/>
+    <param name="use_phd_filter" value="false"/>
+    <param name="association_algorithm" value="nn"/>
+  </node>
+</launch>
+

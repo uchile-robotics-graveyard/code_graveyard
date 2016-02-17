@@ -1,0 +1,13 @@
+<launch>
+
+	<!-- OBS: This node requires bender_tf/tf.launch ... see the configuration file for this node -->
+
+	<!-- NI Detector -->
+	<node pkg="bender_follow_me" type="ni_detector" name="ni_detector" ns="/bender/follow_me" respawn="true">
+
+		<!-- parameters -->
+		<rosparam file="$(find bender_follow_me)/config/ni_detector.yaml" command="load"/>
+
+	</node>
+
+</launch>

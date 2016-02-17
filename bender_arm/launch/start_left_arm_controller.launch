@@ -1,0 +1,41 @@
+<!-- -*- mode: XML -*- -->
+
+<launch>
+    <node name="left_arm_dynamixel_manager" pkg="dynamixel_controllers" type="controller_manager.py" required="true" output="screen">
+        <rosparam>
+            namespace: dxl_manager
+            serial_ports:
+               left_arm_port:
+                    port_name: "/dev/bender/left_arm"
+                    baud_rate: 200000
+                    min_motor_id: 0
+                    max_motor_id: 25
+                    update_rate: 20
+        </rosparam>
+    </node>
+
+    <!-- Load controller configuration to parameter server -->
+    <rosparam file="$(find bender_arm)/config/left_arm_controller.yaml" command="load"/>
+    
+    <!-- start specified joint controllers -->
+    <node name="left_arm_dynamixel_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port=left_arm_port
+                --type=simple
+                    hombro_1_controller
+                    hombro_2_controller
+                    hombro_3_controller
+                    codo_1_controller
+                    codo_2_controller
+                    muneca_controller
+                    dedo_1_controller
+                    dedo_2_controller"
+          	output="screen"/>
+     
+    <node name="left_arm_controller_interface" pkg="bender_arm" 
+    	type="left_arm_controller_interface" />
+
+    <node name="left_arm_service_interface" pkg="bender_arm" 
+    	type="left_arm_service_interface" />
+    	  	
+</launch>

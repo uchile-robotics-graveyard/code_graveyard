@@ -1,0 +1,52 @@
+<launch>
+
+	<!-- Parametros -->
+	<arg name="rviz"         default="true"/>
+	<arg name="simulation"   default="true"/>
+	<arg name="joy_number"   default="0"/>
+
+	<!-- - - - - - - - - - NAVEGACION - - - - - - - - - - - - - - - - - - - -->
+	
+	<!-- Hardware -->
+	<include file="$(find bender_nav)/launch/hardware.launch">
+		<arg name="simulation" value="$(arg simulation)"/>
+		<arg name="joy_number" value="$(arg joy_number)"/>
+	</include>
+
+	<!--include file="$(find bender_follow_me)/launch/laser_front_inverter.launch"/-->
+	
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+	<!-- leg detector -->
+	<include file="$(find bender_follow_me)/launch/leg_detector.launch"/>
+
+	<!-- ni detector -->
+	<!--include file="$(find bender_follow_me)/launch/ni_detector.launch"/-->
+
+	<!-- base controller -->
+	<!--include file="$(find bender_follow_me)/launch/base_controller.launch"/-->
+
+	<!-- RVIZ -->
+	<group if="$(arg rviz)">
+		<node name="rviz" pkg="rviz" type="rviz" respawn="true" output="screen" args="-d $(find bender_follow_me)/config/follow_me.rviz"/>
+	</group>
+
+</launch>
+
+	<!-- amcl -->
+	<!--include file="$(find bender_nav)/launch/amcl_diff.launch"/-->
+
+	<!-- Map Server -->
+	<!--include file="$(find bender_nav)/launch/map_server.launch"/-->
+
+	<!-- - - - - - - - - - - - SPEECH - - - - - - - - - - - - - - - - - - - -->
+
+	<!-- Speech Synthesizer -->
+	<!-- available languages: { english , spanish } -->
+	<!--include file="$(find bender_speech)/launch/synthesizer.launch">
+		<arg name="language" value="spanish"/>
+	</include-->	
+
+	<!-- Speech Recognizer -->
+	<!--include file="$(find bender_speech)/launch/recognizer.launch"/-->

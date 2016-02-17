@@ -1,0 +1,12 @@
+<launch>
+  <param name="/use_sim_time" value="1"/>
+  <node name="real_map_server" pkg="map_server" type="map_server" args="$(find mp_tracker)/launch/square.yaml"/>
+  <node pkg="stage" type="stageros" name="stage_simulation" args="$(find mp_tracker)/launch/simple.world" />
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0.1397 0 0.31 0 0 0 /robot_0/base_link /robot_0/laser 100" />
+  <node pkg="fake_localization" type="fake_localization" name="localisation">
+    <remap from="base_pose_ground_truth" to="/robot_0/base_pose_ground_truth"/>
+    <param name="odom_frame_id" value="/robot_0/odom"/>
+    <param name="base_frame_id" value="/robot_0/base_link"/>
+    <param name="delta_yaw" value="-1.57079633"/>
+  </node>
+</launch>

@@ -1,0 +1,4 @@
+# Regla udev para el seteo de nombres para los lasers hokuyo
+# usados en el sistema de navegacion del robot bender
+
+SUBSYSTEMS=="usb", KERNEL=="ttyUSB[0-9]*",  SUBSYSTEM=="tty", ATTRS{manufacturer}=="FTDI", ATTRS{product}=="FT232R USB UART", SYMLINK+="bender/arm"

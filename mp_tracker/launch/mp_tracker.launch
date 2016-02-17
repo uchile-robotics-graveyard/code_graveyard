@@ -1,0 +1,47 @@
+<launch>
+  <node pkg="mp_tracker" type="mp_tracker_node" name="multi_person_tracker" output="screen">
+  <!--launch-prefix="gdb -ex run - -args">-->
+  <!-- launch-prefix="valgrind - -tool=callgrind">-->
+    <remap from="scan" to="/scan"/>
+    <remap from="camera" to="/openni/rgb/image_color"/>
+    <remap from="camera_info" to="/openni/rgb/camera_info"/>
+<!-- Old files
+    <remap from="camera" to="/camera/rgb/image_color"/>
+    <remap from="camera_info" to="/camera/rgb/camera_info"/>
+-->
+    <param name="use_map_likelihood" value="true"/>
+    <param name="tracking_frame" value="/odom"/>
+    <param name="cluster_proximity" value="0.02"/>
+    <param name="laser_likelihood_sigma" value="0.6"/>
+    <param name="laser_likelihood_angle_epsilon" value="0.034905556"/>
+    <param name="simple_laser_likelihood_gamma" value="5"/>
+    <param name="omit_empty_measurements" value="false"/>
+    <param name="probability_people_detect" value="0.80"/>
+    <param name="expected_birth" value="0.5"/>
+    <param name="detect_threshold" value="1.0"/>
+    <param name="truncate_threshold" value="0.0001"/>
+    <param name="template_match_algorithm" value="CV_TM_SQDIFF_NORMED"/>
+    <param name="template_match_epsilon" value="0.2"/>
+    <param name="merge_threshold" value="0.2"/>
+    <param name="clutter_fullbody" value="0.0000001"/>
+    <param name="upscale_image" value="false"/>
+    <param name="min_dist_people_detector" value="2.5"/>
+    <param name="max_path_distance" value="1.0"/>
+<!-- for QVGA -->
+<!--
+    <param name="max_dist_people_detector" value="5.45"/>
+    <param name="template_roi_size" value="5"/>
+    <param name="detection_pixel_std" value="5"/>
+    <param name="template_dist_epsilon" value="225"/>
+    <param name="detection_height_std" value="48"/>
+    <param name="detection_height_border" value="32"/>
+-->
+<!-- for VGA -->
+    <param name="max_dist_people_detector" value="11.6"/>
+    <param name="template_roi_size" value="15"/>
+    <param name="detection_pixel_std" value="10"/>
+    <param name="template_dist_epsilon" value="900"/>
+    <param name="detection_height_border" value="10"/>
+    <param name="detection_height_std" value="15"/>
+  </node>
+</launch>

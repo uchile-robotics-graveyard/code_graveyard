@@ -1,0 +1,699 @@
+<gazebo version='1.0'>
+  <model name='__default__' static='0'>
+    <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+    <link name='base_link' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='0.000000 0.170304 0.504782 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='12.399500' ixy='-0.000023' ixz='-0.064460' iyy='11.935600' iyz='0.000126' izz='1.121360'/>
+      </inertial>
+      <collision name='base_link_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/base_link.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='base_link_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/base_link.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='h1' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.160200 -0.079900 1.133700 -3.141050 -1.570790 3.141590'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='-0.628898 -0.250166 -0.069840 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='1.121360' ixy='-0.000090' ixz='-0.064460' iyy='11.935600' iyz='0.000276' izz='12.399500'/>
+      </inertial>
+      <collision name='h1_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/h1.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='h1_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/h1.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='b11' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.227018 -0.059192 1.103400 0.000029 1.459500 -1.570220'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='0.624976 0.003011 0.202677 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='1.254780' ixy='-0.064030' ixz='-1.193770' iyy='12.399500' iyz='0.007434' izz='11.802200'/>
+      </inertial>
+      <collision name='b11_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/b11.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='b11_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/b11.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='b12' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.199198 -0.058255 0.934903 -0.005646 0.000106 -3.122810'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='-0.025828 0.274727 -0.428561 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='12.399300' ixy='0.008546' ixz='-0.065560' iyy='11.935400' iyz='-0.059738' izz='1.121700'/>
+      </inertial>
+      <collision name='b12_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/b12.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='b12_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/b12.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='ab1' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.274686 -0.055904 0.753713 1.574500 0.000172 -3.140490'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='0.044850 -0.249918 -0.273149 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='12.399400' ixy='-0.066358' ixz='0.000269' iyy='1.121530' iyz='-0.040216' izz='11.935400'/>
+      </inertial>
+      <collision name='ab1_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/ab1.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='ab1_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/ab1.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='mano1' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.200630 -0.045832 0.337910 -1.570960 0.003703 1.573060'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='-0.284876 -0.165832 -0.028933 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='11.935400' ixy='0.040293' ixz='-0.000274' iyy='1.121530' iyz='0.066311' izz='12.399400'/>
+      </inertial>
+      <collision name='mano1_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/mano1.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='mano1_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/mano1.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='gancho11' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.082913 -0.063786 0.386956 -1.556030 -0.000167 0.002262'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='0.146685 -0.121743 -0.264804 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='12.399400' ixy='-0.066295' ixz='0.001499' iyy='1.123730' iyz='-0.159416' izz='11.933200'/>
+      </inertial>
+      <collision name='gancho11_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/gancho11.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='gancho11_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/gancho11.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='gancho12' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.082830 -0.028186 0.386824 1.538610 0.000167 -3.139320'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='-0.146685 -0.127615 0.298220 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='12.399400' ixy='0.066258' ixz='0.002653' iyy='1.132560' iyz='0.347603' izz='11.924400'/>
+      </inertial>
+      <collision name='gancho12_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/gancho12.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='gancho12_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/gancho12.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='h2' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.160200 0.419900 1.129600 0.001173 1.570793 -0.000003'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='0.624818 -0.249516 -0.069989 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='1.121360' ixy='-0.000200' ixz='0.064459' iyy='11.935600' iyz='0.000509' izz='12.399500'/>
+      </inertial>
+      <collision name='h2_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/h2.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='h2_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/h2.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='b21' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.093393 0.440649 1.103400 0.000000 1.440460 1.569650'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='0.558425 0.003158 -0.345697 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='1.304080' ixy='-0.063979' ixz='-1.393770' iyy='12.399500' iyz='0.007873' izz='11.752900'/>
+      </inertial>
+      <collision name='b21_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/b21.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='b21_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/b21.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='b22' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.121215 0.442274 0.979711 0.013397 0.000093 -0.008110'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='-0.029040 -0.278392 -0.471245 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='12.399400' ixy='-0.003598' ixz='-0.065469' iyy='11.933700' iyz='0.144608' izz='1.123300'/>
+      </inertial>
+      <collision name='b22_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/b22.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='b22_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/b22.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='ab2' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.070413 0.445074 0.753726 -1.570700 -0.008757 1.562690'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='-0.276611 0.246529 -0.021762 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='11.934800' ixy='-0.094441' ixz='0.003294' iyy='1.122190' iyz='-0.065485' izz='12.399400'/>
+      </inertial>
+      <collision name='ab2_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/ab2.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='ab2_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/ab2.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='mano2' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.119506 0.435186 0.436031 -1.570580 -0.008754 1.549090'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='-0.264689 -0.071065 0.023844 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='11.934900' ixy='-0.093541' ixz='0.009610' iyy='1.122190' iyz='-0.066763' izz='12.399300'/>
+      </inertial>
+      <collision name='mano2_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/mano2.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='mano2_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/mano2.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='gancho21' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.138913 0.417324 0.386672 -1.554030 0.000212 -0.021705'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='-0.043644 -0.118284 -0.247777 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='12.399300' ixy='0.066838' ixz='-0.009074' iyy='1.121390' iyz='-0.006883' izz='11.935800'/>
+      </inertial>
+      <collision name='gancho21_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/gancho21.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='gancho21_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/gancho21.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='gancho22' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.139685 0.452915 0.386984 1.546610 -0.000212 3.119880'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='0.043644 -0.115894 0.284243 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='12.399300' ixy='-0.066903' ixz='-0.008578' iyy='1.121880' iyz='-0.073304' izz='11.935300'/>
+      </inertial>
+      <collision name='gancho22_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/gancho22.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='gancho22_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/gancho22.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='w1' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.209200 -0.060000 0.020569 -1.570800 -0.369699 0.000000'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='0.064277 -0.494390 0.230304 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='10.970400' ixy='-3.752230' ixz='0.000024' iyy='2.550440' iyz='-0.000125' izz='11.935600'/>
+      </inertial>
+      <collision name='w1_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/w1.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='w1_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/w1.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='w2' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='-0.030795 -0.060000 0.020548 -1.570800 -0.139540 0.000000'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='0.187466 -0.462656 0.230304 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='12.199000' ixy='-1.491460' ixz='-0.000005' iyy='1.321790' iyz='-0.000128' izz='11.935600'/>
+      </inertial>
+      <collision name='w2_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/w2.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='w2_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/w2.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='w3' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='0.209200 0.400000 0.020570 -1.570800 0.139540 3.141590'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='0.050200 -0.496015 0.229696 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='12.199000' ixy='1.491460' ixz='-0.000005' iyy='1.321790' iyz='0.000128' izz='11.935600'/>
+      </inertial>
+      <collision name='w3_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/w3.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='w3_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/w3.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <link name='w4' gravity='1' self_collide='0' kinematic='0'>
+      <origin pose='-0.030800 0.400000 0.020550 -1.570800 0.139540 3.141590'/>
+      <inertial mass='72.944100' density='1.000000'>
+        <origin pose='-0.187470 -0.462653 0.229696 0.000000 -0.000000 0.000000'/>
+        <inertia ixx='12.199000' ixy='1.491460' ixz='-0.000005' iyy='1.321790' iyz='0.000128' izz='11.935600'/>
+      </inertial>
+      <collision name='w4_geom' laser_retro='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/w4.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+        <surface>
+          <friction>
+            <ode mu='-1.000000' mu2='-1.000000' fdir1='0.000000 0.000000 0.000000' slip1='0.000000' slip2='0.000000'/>
+          </friction>
+          <bounce restitution_coefficient='0.000000' threshold='100000.000000'/>
+          <contact>
+            <ode soft_cfm='0.000000' soft_erp='0.200000' kp='1000000000000.000000' kd='1.000000' max_vel='100.000000' min_depth='0.001000'/>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='w4_geom_visual' cast_shadows='1' laser_retro='0.000000' transparency='0.000000'>
+        <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+        <geometry>
+          <mesh filename='/home/benderbase/fuerte_workspace/bender_model/meshes/w4.STL' scale='1.000000 1.000000 1.000000'/>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_cb1' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='base_link'/>
+      <child link='h1'/>
+      <axis xyz='0.000004 -0.000000 -1.000000'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='0.000000' upper='0.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_h1b1' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='h1'/>
+      <child link='b11'/>
+      <axis xyz='1.000000 0.000550 0.000003'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='0.000000' upper='0.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_b11b12' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='b11'/>
+      <child link='b12'/>
+      <axis xyz='-0.000000 -0.005647 0.999984'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='0.000000' upper='0.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_b12ab1' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='b12'/>
+      <child link='ab1'/>
+      <axis xyz='-0.999824 -0.018775 -0.000106'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='0.000000' upper='0.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_ab1m1' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='ab1'/>
+      <child link='mano1'/>
+      <axis xyz='0.000175 -0.003707 -0.999993'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='0.000000' upper='0.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_m1g1' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='mano1'/>
+      <child link='gancho11'/>
+      <axis xyz='0.999997 0.002262 0.000167'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='0.000000' upper='0.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_m1g2' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='mano1'/>
+      <child link='gancho12'/>
+      <axis xyz='0.999997 0.002266 0.000167'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='0.000000' upper='0.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_ch2' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='base_link'/>
+      <child link='h2'/>
+      <axis xyz='-0.000000 0.000000 -1.000000'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='0.000000' upper='0.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_h2b2' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='h2'/>
+      <child link='b21'/>
+      <axis xyz='-0.999999 0.001147 -0.000000'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='0.000000' upper='0.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_b21b22' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='b21'/>
+      <child link='b22'/>
+      <axis xyz='-0.000032 -0.013388 0.999910'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='0.000000' upper='0.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_b22ab2' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='b22'/>
+      <child link='ab2'/>
+      <axis xyz='0.999997 -0.002293 -0.000000'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='0.000000' upper='0.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_ab2m2' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='ab2'/>
+      <child link='mano2'/>
+      <axis xyz='-0.000021 0.008750 -0.999962'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='0.000000' upper='0.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_m2g1' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='mano2'/>
+      <child link='gancho21'/>
+      <axis xyz='0.999764 -0.021704 -0.000212'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='0.000000' upper='0.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_m2g2' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='mano2'/>
+      <child link='gancho22'/>
+      <axis xyz='0.999764 -0.021704 -0.000212'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='0.000000' upper='0.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_rueda1' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='base_link'/>
+      <child link='w1'/>
+      <axis xyz='0.000001 1.000000 -0.000003'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='-10000000000000000.000000' upper='10000000000000000.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_rueda2' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='base_link'/>
+      <child link='w2'/>
+      <axis xyz='0.000001 1.000000 -0.000004'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='-10000000000000000.000000' upper='10000000000000000.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_rueda3' type='revolute'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='base_link'/>
+      <child link='w3'/>
+      <axis xyz='0.000007 1.000000 0.000004'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='-10000000000000000.000000' upper='10000000000000000.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+    <joint name='joint_rueda4' type='prismatic'>
+      <origin pose='0.000000 0.000000 0.000000 0.000000 -0.000000 0.000000'/>
+      <parent link='base_link'/>
+      <child link='w4'/>
+      <axis xyz='0.000007 1.000000 0.000004'>
+        <dynamics damping='0.000000' friction='0.000000'/>
+        <limit lower='0.000000' upper='0.000000' effort='0.000000' velocity='0.000000'/>
+      </axis>
+    </joint>
+  </model>
+</gazebo>

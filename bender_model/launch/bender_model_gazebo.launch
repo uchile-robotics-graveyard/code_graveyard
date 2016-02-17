@@ -1,0 +1,6 @@
+<launch>
+	<include file="$(find gazebo_ros)/launch/empty_world.launch" />
+
+	<!-- Spawn a robot into Gazebo -->
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find bender_model)/robots/v2.0/bender_model.xml -urdf -z 0.1 -model Bender" />
+</launch> 

@@ -1,0 +1,78 @@
+<!-- -*- mode: XML -*- -->
+
+<launch>
+    <node name="dynamixel_manager_bottom" pkg="dynamixel_controllers" type="controller_manager.py" required="true" output="screen">
+        <rosparam>
+            namespace: dxl_manager
+            serial_ports:
+               bottom_arm_port:
+                    port_name: "/dev/bender/base_arm"
+                    baud_rate: 200000
+                    min_motor_id: 21
+                    max_motor_id: 26
+                    update_rate: 20
+        </rosparam>
+    </node>
+
+    <!-- Load controller configuration to parameter server -->
+    <rosparam file="$(find bender_arm)/config/bottom_arm_controller.yaml" command="load"/>
+    
+    <!-- start specified joint controllers -->
+    <node name="dynamixel_controller_spawner_bottom" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port=bottom_arm_port
+                --type=simple
+                    m_1_controller
+                    m_2_controller
+                    m_3_controller
+                    m_4_controller
+                    m_5_controller
+                    m_6_controller"
+          	output="screen"/>
+     
+
+    <node name="bottom_arm_controller_interface" pkg="bender_arm" 
+    	type="bottom_arm_controller_interface" />
+
+    <node name="bottom_arm_service_interface" pkg="bender_arm" 
+    	type="bottom_arm_service_interface" />
+
+    <node name="dynamixel_manager_right" pkg="dynamixel_controllers" type="controller_manager.py" required="true" output="screen">
+        <rosparam>
+            namespace: dxl_manager
+            serial_ports:
+               right_arm_port:
+                    port_name: "/dev/bender/right_arm"
+                    baud_rate: 117647
+                    min_motor_id: 10
+                    max_motor_id: 20
+                    update_rate: 20
+        </rosparam>
+    </node>
+
+    <!-- Load controller configuration to parameter server -->
+    <rosparam file="$(find bender_arm)/config/right_arm_controller.yaml" command="load"/>
+    
+    <!-- start specified joint controllers -->
+    <node name="dynamixel_controller_spawner_right" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port=right_arm_port
+                --type=simple
+                    right_hombro_1_controller
+                    right_hombro_2_controller
+                    right_hombro_3_controller
+                    right_codo_1_controller
+                    right_codo_2_controller
+                    right_muneca_controller
+                    right_dedo_1_controller
+                    right_dedo_2_controller"
+            output="screen"/>
+     
+    <node name="right_arm_controller_interface" pkg="bender_arm" 
+        type="right_arm_controller_interface" />
+
+    <node name="right_arm_service_interface" pkg="bender_arm" 
+        type="right_arm_service_interface" />
+
+    	  	
+</launch>

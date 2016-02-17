@@ -1,0 +1,11 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+
+    <!-- Right Arm Controller and Planner -->
+    <include file="$(find bender_arm)/launch/complete_Rarm.launch"/>
+
+    <!-- Left Arm Controller and Planner -->
+    <include file="$(find bender_arm)/launch/complete_Larm.launch"/>
+
+
+</launch>

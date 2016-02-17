@@ -1,0 +1,102 @@
+hombro_1_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: hombro_1
+    joint_speed: 0.7
+    motor:
+        id: 1
+        init: 2055
+        min: 780
+        max: 3060
+hombro_2_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: hombro_2
+    joint_speed: 0.7
+    motor:
+        id: 2
+        init: 2590
+        min: 1600
+        max: 2750
+
+hombro_3_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: hombro_3
+    joint_speed: 0.7
+    motor:
+        id: 3
+        init: 435
+        min: 160
+        max: 730
+
+codo_1_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: codo_1
+    joint_speed: 0.7
+    motor:
+        id: 4
+        init: 2080
+        min: 1400
+        max: 3250
+
+codo_2_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: codo_2
+    joint_speed: 0.7
+    motor:
+        id: 5
+        init: 430
+        min: 190
+        max: 650
+
+muneca_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: muneca
+    joint_speed: 0.7
+    motor:
+        id: 16
+        init: 350
+        min: 105
+        max: 565
+
+dedo_1_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: dedo_1
+    joint_speed: 0.7
+    motor:
+        id: 17
+        init: 455
+        max: 315
+        min: 465
+
+dedo_2_controller:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: dedo_2
+    joint_speed: 0.7
+    motor:
+        id: 18
+        init: 740
+        max: 730
+        min: 880

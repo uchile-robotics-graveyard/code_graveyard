@@ -1,0 +1,10 @@
+<launch>
+
+	<!-- Base Controller -->
+	<node pkg="bender_follow_me" type="base_controller" name="base_controller" ns="/bender/follow_me">
+		<remap from="base_controller/scan" to="/bender/sensors/laser_front/scan_inverted"/>
+		<remap from="base_controller/cmd_vel_in" to="/bender/follow_me/behavior_cmd"/>
+		<remap from="base_controller/cmd_vel_out" to="/bender/nav/cmd_vel"/>
+	</node>
+
+</launch>

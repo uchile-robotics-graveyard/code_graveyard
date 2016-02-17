@@ -1,0 +1,1246 @@
+<?xml version="1.0"?>
+<robot name="bender_viejo">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0.170304245490803 0.5047815556696"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="12.3994536279395"
+        ixy="-2.2531664909494E-05"
+        ixz="-0.0644595968648607"
+        iyy="11.9355796719923"
+        iyz="0.000125660338213639"
+        izz="1.12135615603244" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/base_link.STL" />
+      </geometry>
+      <material
+        name="cuerpo">
+        <color
+          rgba=".5 .5 .5 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="h1">
+    <inertial>
+      <origin
+        xyz="-0.6288984443304 -0.250166115689619 -0.0698395816566079"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="1.12135615603244"
+        ixy="-9.04333093759594E-05"
+        ixz="-0.0644596559121868"
+        iyy="11.9355798351597"
+        iyz="0.000276037581878583"
+        izz="12.3994534647721" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/h1.STL" />
+      </geometry>
+      <material
+        name="brazo1">
+        <color
+          rgba=".4 .4 .4 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/h1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br1_ax1"
+    type="revolute">
+    <origin
+      xyz="0.1602 -0.0799 1.1337"
+      rpy="0.0005465 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="h1" />
+    <axis
+      xyz="-1 -1.9423E-15 -1.1105E-15" />
+    <limit
+      lower="1.57"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="b11">
+    <inertial>
+      <origin
+        xyz="0.624976180609141 0.00301061281297567 0.202677377896839"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="1.2547807513567"
+        ixy="-0.0640301750113915"
+        ixz="-1.19376769250737"
+        iyy="12.3994534647721"
+        iyz="0.00743371542868732"
+        izz="11.8021552398354" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/b11.STL" />
+      </geometry>
+      <material
+        name="brazo2">
+        <color
+          rgba=".3 .3 .3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/b11.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br1_ax2"
+    type="revolute">
+    <origin
+      xyz="-0.0303 0.020672 -0.066829"
+      rpy="-1.5708 1.5338E-16 -3.0303" />
+    <parent
+      link="h1" />
+    <child
+      link="b11" />
+    <axis
+      xyz="-4.3517E-15 1 1.0453E-15" />
+    <limit
+      lower="0"
+      upper="2.5"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="b12">
+    <inertial>
+      <origin
+        xyz="-0.0258280133265006 0.274727395199185 -0.42856083622843"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="12.3992960840444"
+        ixy="0.00854644373243957"
+        ixz="-0.0655597894414579"
+        iyy="11.9353939906615"
+        iyz="-0.0597380490398542"
+        izz="1.12169938125838" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/b12.STL" />
+      </geometry>
+      <material
+        name="brazo1"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/b12.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br1_ax3"
+    type="revolute">
+    <origin
+      xyz="0.167349208280597 -0.0278199607012485 -0.0196594121949676"
+      rpy="1.45383767006971 -0.0181013127544212 -1.56866963427806" />
+    <parent
+      link="b11" />
+    <child
+      link="b12" />
+    <axis
+      xyz="8.34538465893306E-14 -3.99827740360514E-14 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="ab1">
+    <inertial>
+      <origin
+        xyz="0.0448502133161026 -0.249918056868665 -0.273148746653399"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="12.399431599689"
+        ixy="-0.0663581516022968"
+        ixz="0.000268557827535124"
+        iyy="1.12152773936844"
+        iyz="-0.0402158209075857"
+        izz="11.9354301169068" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/ab1.STL" />
+      </geometry>
+      <material
+        name="brazo2"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/ab1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br1_ax4_codo"
+    type="revolute">
+    <origin
+      xyz="-0.0754999999999963 8.92241047213416E-05 -0.1812"
+      rpy="1.58014561302465 0.000165302111840092 -0.0176783628733099" />
+    <parent
+      link="b12" />
+    <child
+      link="ab1" />
+    <axis
+      xyz="0.999843728152407 8.07866143773261E-16 -0.0176782146806635" />
+    <limit
+      lower="-2"
+      upper=".5"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="mano1">
+    <inertial>
+      <origin
+        xyz="-0.284875615269437 -0.165831943131387 -0.0289328542845172"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="11.9354301233484"
+        ixy="0.0402933955300841"
+        ixz="-0.000274066151176224"
+        iyy="1.12152773936844"
+        iyz="0.0663110760878465"
+        izz="12.3994315932473" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/mano1.STL" />
+      </geometry>
+      <material
+        name="manos">
+        <color
+          rgba="0.4 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/mano1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br1_ax5_mano"
+    type="revolute">
+    <origin
+      xyz="0.0741161938125867 -0.415750000000028 0.0116928384738024"
+      rpy="3.14159265351857 -1.56962688281891 7.1219055262981E-11" />
+    <parent
+      link="ab1" />
+    <child
+      link="mano1" />
+    <axis
+      xyz="-4.29139614344446E-06 0.999999999990313 9.78700781771924E-07" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="gancho11">
+    <inertial>
+      <origin
+        xyz="0.14668493028054 -0.121743208492641 -0.264803670017026"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="12.3994315932473"
+        ixy="-0.0662947048022556"
+        ixz="0.00149867920685607"
+        iyy="1.12372811093651"
+        iyz="-0.159415555809171"
+        izz="11.9332297517804" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/gancho11.STL" />
+      </geometry>
+      <material
+        name="gancho">
+        <color
+          rgba="0 .4 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/gancho11.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br1_ax6_g11"
+    type="revolute">
+    <origin
+      xyz="-0.017869 -0.049 0.11775"
+      rpy="0.018469 1.5708 0" />
+    <parent
+      link="mano1" />
+    <child
+      link="gancho11" />
+    <axis
+      xyz="1 -1.6338E-16 2.6108E-16" />
+    <limit
+      lower="-.5"
+      upper=".3"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="gancho12">
+    <inertial>
+      <origin
+        xyz="-0.14668493028054 -0.127615357104562 0.298219659028332"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="12.3994315932473"
+        ixy="0.0662585354213839"
+        ixz="0.0026533767158092"
+        iyy="1.13256226521324"
+        iyz="0.34760334046435"
+        izz="11.9243955975036" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/gancho12.STL" />
+      </geometry>
+      <material
+        name="gancho"/>        
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/gancho12.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br1_ax7_g12"
+    type="revolute">
+    <origin
+      xyz="0.0177312938784562 -0.0489999999999985 0.117752075996031"
+      rpy="3.1057012435692 -1.5707963267949 0" />
+    <parent
+      link="mano1" />
+    <child
+      link="gancho12" />
+    <axis
+      xyz="-1 -4.83581273982847E-16 -2.4307812707125E-16" />
+    <limit
+      lower="3"
+      upper="3.9"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="h2">
+    <inertial>
+      <origin
+        xyz="0.624818444330398 -0.249515672266177 -0.0699889856059786"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="1.12135615603244"
+        ixy="-0.000199566753566874"
+        ixz="0.0644594104193625"
+        iyy="11.9355802301284"
+        iyz="0.00050932522724765"
+        izz="12.3994530698033" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/h2.STL" />
+      </geometry>
+      <material
+        name="brazo1"/>        
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/h2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br2_ax1"
+    type="revolute">
+    <origin
+      xyz="0.160199999999997 0.419900000000005 1.1296"
+      rpy="0.00114655563678025 1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="h2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="b21">
+    <inertial>
+      <origin
+        xyz="0.558425437013385 0.00315795444961534 -0.345696998680031"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="1.30407717694385"
+        ixy="-0.0639788762241555"
+        ixz="-1.39377154926033"
+        iyy="12.3994530698033"
+        iyz="0.00787263620988015"
+        izz="11.752859209217" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/b21.STL" />
+      </geometry>
+      <material
+        name="brazo2"/>        
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/b21.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br2_ax2"
+    type="revolute">
+    <origin
+      xyz="0.0261999999999958 0.0206719323855183 -0.066831031156364"
+      rpy="-1.5707963267949 3.61147743654922E-16 0.130336405536498" />
+    <parent
+      link="h2" />
+    <child
+      link="b21" />
+    <axis
+      xyz="4.54752338216458E-15 1 5.24103330179493E-16" />
+    <limit
+      lower="0"
+      upper="-2.5"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="b22">
+    <inertial>
+      <origin
+        xyz="-0.0290400104632627 -0.278391781159161 -0.471245130917443"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="12.3994255477507"
+        ixy="-0.00359792103826444"
+        ixz="-0.0654690279756932"
+        iyy="11.9336615898185"
+        iyz="0.144607897550167"
+        izz="1.123302318395" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/b22.STL" />
+      </geometry>
+      <material
+        name="brazo1"/>        
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/b22.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br2_ax3"
+    type="revolute">
+    <origin
+      xyz="0.122855175455818 -0.0278199607014661 -0.0144324586857254"
+      rpy="1.4538541089458 0.00691609560993792 -1.57160881081343" />
+    <parent
+      link="b21" />
+    <child
+      link="b22" />
+    <axis
+      xyz="-1.66050517719304E-05 8.51953930650073E-06 0.999999999825845" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="ab2">
+    <inertial>
+      <origin
+        xyz="-0.276611138195428 0.246529375669317 -0.0217616238309265"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="11.9347708210675"
+        ixy="-0.0944405915039847"
+        ixz="0.00329409661608527"
+        iyy="1.12219308714605"
+        iyz="-0.0654850180373827"
+        izz="12.3994255477507" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/ab2.STL" />
+      </geometry>
+      <material
+        name="brazo2"/>        
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/ab2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br2_ax4_codo"
+    type="revolute">
+    <origin
+      xyz="-0.0508016342941896 -0.000639689132239163 -0.226001924658143"
+      rpy="-1.5707963267949 0.00464016021330103 1.57079632679489" />
+    <parent
+      link="b22" />
+    <child
+      link="ab2" />
+    <axis
+      xyz="0.00581703606917506 -4.23522783510321E-05 -0.999983080005684" />
+    <limit
+      lower="-.5"
+      upper="2"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="mano2">
+    <inertial>
+      <origin
+        xyz="-0.264688670130749 -0.0710653174312623 0.023843573555066"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="11.9349462730275"
+        ixy="-0.093541544834529"
+        ixz="0.00960962390814332"
+        iyy="1.12219308714605"
+        iyz="-0.0667629560530033"
+        izz="12.3992500957907" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/mano2.STL" />
+      </geometry>
+      <material
+        name="manos"/>        
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/mano2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br2_ax5_mano"
+    type="revolute">
+    <origin
+      xyz="-0.012271103540749 0.317594693100581 -0.0492016342941839"
+      rpy="-1.42015827935863E-15 0.0135961677453183 5.52733986694614E-15" />
+    <parent
+      link="ab2" />
+    <child
+      link="mano2" />
+    <axis
+      xyz="-6.57493142595771E-06 0.99999999997772 -1.15325506892602E-06" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="gancho21">
+    <inertial>
+      <origin
+        xyz="-0.0436435735549115 -0.11828352643582 -0.24777709073143"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="12.3992500957907"
+        ixy="0.0668378201103075"
+        ixz="-0.0090743030308206"
+        iyy="1.1213882971535"
+        iyz="-0.00688312190699176"
+        izz="11.9357510630201" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/gancho21.STL" />
+      </geometry>
+      <material
+        name="gancho"/>        
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/gancho21.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br2_ax6_g21"
+    type="revolute">
+    <origin
+      xyz="-0.0178674134900717 0.0492000000453121 -0.019799999999846"
+      rpy="0.00801369614557484 1.5707963267949 0" />
+    <parent
+      link="mano2" />
+    <child
+      link="gancho21" />
+    <axis
+      xyz="0.999999999999995 -1.117306797433E-10 -1.03982175269496E-07" />
+    <limit
+      lower="-.5"
+      upper=".2"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="gancho22">
+    <inertial>
+      <origin
+        xyz="0.0436435735549115 -0.115893758328431 0.284243112042599"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="12.3992500957907"
+        ixy="-0.0669032688075695"
+        ixz="-0.00857844947851963"
+        iyy="1.12188082460455"
+        iyz="-0.0733041970949365"
+        izz="11.935258535569" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/gancho22.STL" />
+      </geometry>
+      <material
+        name="gancho"/>        
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/gancho22.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br2_ax7_g22"
+    type="revolute">
+    <origin
+      xyz="0.0177325815241471 0.0491999999999564 -0.0197999999998461"
+      rpy="3.12616386483018 -1.5707963267949 0" />
+    <parent
+      link="mano2" />
+    <child
+      link="gancho22" />
+    <axis
+      xyz="1 8.82610038657403E-13 -8.25835927420471E-13" />
+    <limit
+      lower="2.6"
+      upper="3.4"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="w1">
+    <inertial>
+      <origin
+        xyz="0.0642766434710987 -0.49439038680533 0.230304245490803"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="10.970371197659"
+        ixy="-3.75222725740118"
+        ixz="2.43964097469945E-05"
+        iyy="2.55043858631288"
+        iyz="-0.00012531165833577"
+        izz="11.9355796719923" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/w1.STL" />
+      </geometry>
+      <material
+        name="goma_rueda">
+        <color
+          rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/w1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda1"
+    type="continuous">
+    <origin
+      xyz="0.2092 -0.06 0.020569"
+      rpy="-1.5708 -0.3697 2.3728E-17" />
+    <parent
+      link="base_link" />
+    <child
+      link="w1" />
+    <axis
+      xyz="5.0146E-17 -1.294E-16 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="w2">
+    <inertial>
+      <origin
+        xyz="0.187465565610882 -0.462655783380321 0.230304245490803"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="12.1990225398961"
+        ixy="-1.49146363211681"
+        ixz="-4.83447919846737E-06"
+        iyy="1.32178724407579"
+        iyz="-0.000127572819732174"
+        izz="11.9355796719923" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/w2.STL" />
+      </geometry>
+      <material
+        name="goma_rueda"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/w2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda2"
+    type="continuous">
+    <origin
+      xyz="-0.030795 -0.06 0.020548"
+      rpy="-1.5708 -0.13954 8.6002E-18" />
+    <parent
+      link="base_link" />
+    <child
+      link="w2" />
+    <axis
+      xyz="1.9303E-17 -1.3743E-16 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="w3">
+    <inertial>
+      <origin
+        xyz="0.0501997534220114 -0.496015305449767 0.229695754509197"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="12.1990225398961"
+        ixy="1.49146363211705"
+        ixz="-4.83447919853719E-06"
+        iyy="1.32178724407586"
+        iyz="0.000127572819731672"
+        izz="11.9355796719923" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/w3.STL" />
+      </geometry>
+      <material
+        name="goma_rueda"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/w3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda3"
+    type="continuous">
+    <origin
+      xyz="0.2092 0.4 0.02057"
+      rpy="-1.5708 0.13954 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="w3" />
+    <axis
+      xyz="-9.6513E-18 -6.8714E-17 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="w4">
+    <inertial>
+      <origin
+        xyz="-0.187470146373415 -0.462653370085844 0.229695754509197"
+        rpy="0 0 0" />
+      <mass
+        value="72.9440610632504" />
+      <inertia
+        ixx="12.1990225398961"
+        ixy="1.4914636321168"
+        ixz="-4.83447919853488E-06"
+        iyy="1.32178724407579"
+        iyz="0.000127572819731677"
+        izz="11.9355796719923" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/w4.STL" />
+      </geometry>
+       <material
+        name="goma_rueda"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://bender_model/meshes/v1.0/w4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda4"
+    type="continuous">
+    <origin
+      xyz="-0.0308 0.4 0.02055"
+      rpy="-1.5708 0.13954 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="w4" />
+    <axis
+      xyz="-9.6513E-18 -6.8714E-17 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <calibration
+      rising="0"
+      falling="0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+    <safety_controller
+      soft_lower_limit="0"
+      soft_upper_limit="0"
+      k_position="0"
+      k_velocity="0" />
+  </joint>
+</robot>

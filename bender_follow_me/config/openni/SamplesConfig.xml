@@ -1,0 +1,206 @@
+<OpenNI>
+
+	<Licenses>
+		<License vendor="PrimeSense" key="insert key here"/>
+	</Licenses>
+
+	<Log writeToConsole="true" writeToFile="false" writeLineInfo="false">
+
+		<!-- 0 - Verbose, 1 - Info, 2 - Warning, 3 - Error (default) -->
+		<LogLevel value="3"/>
+
+		<!-- Masks with a list of Mask elements, each determines if a specific mask is on or off -->
+		<Masks>
+			<Mask name="ALL" on="false"/>
+		</Masks>
+
+		<!-- Dumps with a list of Dump elements, each determines if a specific dump is on or off. -->
+		<Dumps>
+			<!--Dump name="SensorTimestamps" on="false" /-->
+		</Dumps>
+
+	</Log>
+
+	<ProductionNodes startGenerating="true">
+		<!-- creation and configuration of nodes.  -->
+
+		<!-- mirror everything -->
+		<GlobalMirror on="false"/>
+
+		<!-- Recording:  "playbackSpeed" to fast forward, or to slow down the playback. (0.0 == as fast as possible) -->
+		<!--Recording file="c:\myfile.oni" playbackSpeed="2.0"/-->
+
+
+		<!-- Ask OpenNi to Enumerate and Create Nodes -->
+		<!-- Tipes:
+			- Device  : (XN_NODE_TYPE_DEVICE)
+			- Depth   : (XN_NODE_TYPE_DEPTH)
+			- Image   : (XN_NODE_TYPE_IMAGE)
+			- IR      : (XN_NODE_TYPE_IR)
+			- Audio   : (XN_NODE_TYPE_AUDIO)
+			- Gesture : (XN_NODE_TYPE_GESTURE)
+			- User    : (XN_NODE_TYPE_USER)
+			- Scene   : (XN_NODE_TYPE_SCENE)
+			- Hands   : (XN_NODE_TYPE_HANDS)
+			- Recorder: (XN_NODE_TYPE_RECORDER)
+		-->
+
+		<Node type="Depth" name="depth" startGenerating="true">
+	
+			<!--
+			<Query>
+				<Vendor>vendor1</Vendor>
+				<Name>name1</Name>
+				<MinVersion>1.0.0.0</MinVersion>
+				<MaxVersion>3.1.0.5</MaxVersion>
+				<Capabilities>
+					< ! - - list of capabilities the node must support - - >
+					<Capability>UserPosition</Capability>
+					<Capability>Mirror</Capability>
+				</Capabilities>
+				<MapOutputModes>
+					<MapOutputMode xRes="640" yRes="480" FPS="30"/>
+				</MapOutputModes>
+				<MinUserPositions>2</MinUserPositions>
+				<NeededNodes>
+					<Node>MyDevice</Node>
+				</NeededNodes>
+			</Query>
+			-->
+
+			<!-- 
+			Configuration:
+			"Mirror": "on" set to "true" or "false". 
+			"MapOutputMode": "xRes", "yRes" and "fps".                       Only relevant to map generators (depth, image, IR and scene).
+			"WaveOutputMode": "sampleRate", "bitsPerSample" and "channels".  Only relevant to audio generators.
+			"Cropping": "enabled", "xOffset", "yOffset", "xSize", "ySize".   Only relevant to map generators (depth, image, IR and scene), which support the "Cropping" capability.
+			"PixelFormat": one of the values: "RGB24", "YUV422", "Grayscale8" or "Grayscale16".  Only relevant to image generators.
+			"UserPosition": "index" and two sub-elements: "Min" and "Max", each has 3 attributes: "x", "y" and "z". Only relevant to depth generators supporting the "UserPosition" capability.
+			"FrameSync": which contains the name of the node to frame sync with. Only relevant to generators that support the "FrameSync" capability.
+			"AlternativeViewPoint": which contains the name of the node to set view point to.
+			"RecorderDestination": "medium" (currently, only "File" is supported), and "name", which should hold the file name.  Only relevant to recorder nodes.
+			"AddNodeToRecording":  "name" and "codec". Only relevant to recorder nodes.
+			"Property": "type", "name" and "value". Type can be "int", "real", or "string". 
+			-->
+			<Configuration>
+				<!--MapOutputMode xRes="640" yRes="480" FPS="30"/-->
+				<Mirror on="false"/>
+			</Configuration>
+
+		</Node>
+
+		<!--Node type="Gesture" name="gesture">
+		</Node-->
+
+		<Node type="Hands" name="hands">
+		</Node>
+
+		<Node type="User" name="user">
+		</Node>
+
+		<Node type="Image" name="image">
+		</Node>
+
+		<!-- record data from other nodes that were created in the xml script -->
+		<!--Node type="Recorder">
+
+			<Configuration>
+				<RecorderDestination name="MyFile.oni"/>
+				<AddNodeToRecording name="Image1" codec="JPEG"/>
+				<AddNodeToRecording name="Depth1" codec="16zT"/>
+			</Configuration>
+
+		</Node-->
+
+
+
+	</ProductionNodes>
+</OpenNI>
+
+
+<!-- 
+
+		// - - - - - - Configuration - - - - - - - -
+		XnMapOutputMode outputMode;
+		outputMode.nXRes = 640;
+		outputMode.nYRes = 480;
+		outputMode.nFPS = 30;
+		nRetVal = depthGen.SetMapOutputMode(outputMode);
+		if (nRetVal != XN_STATUS_OK)
+		{
+			printf("Failed to configure the generator: %s\n", xnGetStatusString(nRetVal));
+			exit(-1);
+		}
+
+
+
+    // Build a query object
+	xn::Query query;
+	//XnStatus nRetVal;
+
+	// - - - - - - set requisites - - - - -
+	nRetVal = query.SetVendor("MyVendor");
+	if (nRetVal != XN_STATUS_OK)	{
+		printf("Failed to set vendor: %s\n", xnGetStatusString(nRetVal));
+		exit(-1);
+	}
+
+	nRetVal = query.AddSupportedCapability(XN_CAPABILITY_MIRROR);
+	if (nRetVal != XN_STATUS_OK)	{
+		printf("Failed to add supported capability: %s\n", xnGetStatusString(nRetVal));
+		exit(-1);
+	}
+
+
+
+
+	// - - - - - - Create NodeHandle - - - - - -
+	xn::DepthGenerator depthGen;
+	xn::EnumerationErrors errors;
+	/*
+	xn::NodeInfoList possibleChains;
+
+	nRetVal = context.EnumerateProductionTrees(XN_NODE_TYPE_USER, &query, possibleChains, &errors);
+	if (nRetVal != XN_STATUS_OK)	{
+		printf("Failed to enumerate production chains: %s\n", xnGetStatusString(nRetVal));
+		exit(-1);
+	}
+
+	// No errors so far. This means list has at least one item. Take the first one
+	xn::NodeInfo selected = *possibleChains.Begin();
+
+	// Create it
+	nRetVal = context.CreateProductionTree(selected);
+	if (nRetVal != XN_STATUS_OK)	{
+		printf("Failed to create production chain: %s\n", xnGetStatusString(nRetVal));
+		exit(-1);
+	}
+	// Take the node
+
+	nRetVal = selected.GetInstance(userGen);
+	if (nRetVal != XN_STATUS_OK)	{
+		printf("Failed to get user generator: %s\n", xnGetStatusString(nRetVal));
+		exit(-1);
+	}
+
+
+
+		// Hace lo mismo que lo que está arriba... además imprime errores
+		nRetVal = _ni_context.CreateAnyProductionTree(XN_NODE_TYPE_DEPTH, NULL, depthGen, &errors);
+		if (nRetVal == XN_STATUS_NO_NODE_PRESENT)
+		{
+			// Iterate over enumeration errors, and print each one
+			for (xn::EnumerationErrors::Iterator it = errors.Begin(); it != errors.End(); ++it)
+			{
+				XnChar strDesc[512];
+				xnProductionNodeDescriptionToString(&it.Description(), strDesc, 512);
+				printf("%s failed to enumerate: %s\n", xnGetStatusString(it.Error()));
+			}
+			exit(-1);
+		}
+		else if (nRetVal != XN_STATUS_OK)
+		{
+			printf("Create failed: %s\n", xnGetStatusString(nRetVal));
+			exit(-1);
+		}
+-->
