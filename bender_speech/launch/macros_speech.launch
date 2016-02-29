@@ -1,0 +1,12 @@
+<launch>
+
+	<!-- Sentences -->
+	<include file="$(find bender_speech)/launch/sentences.launch" />
+
+	<!-- Interaction -->
+	<include file="$(find bender_speech)/launch/interaction.launch"/>
+
+	<!-- Ask_Question -->
+	<include file="$(find bender_speech)/launch/ask_question.launch"/>
+
+</launch>

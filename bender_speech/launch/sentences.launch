@@ -1,0 +1,9 @@
+<launch>
+
+	<!-- Sentences -->
+	<node name="sentences" pkg="bender_speech" type="sentences" output="screen" ns="/bender/speech/">
+		<remap from="sentences/throw_sentences" to="interaction/throw_sentences" />
+		<remap from="sentences/n_questions" to="interaction/n_questions" />
+	</node>
+
+</launch>
