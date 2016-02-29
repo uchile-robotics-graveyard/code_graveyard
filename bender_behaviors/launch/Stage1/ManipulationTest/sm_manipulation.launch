@@ -1,0 +1,5 @@
+<launch>
+	
+	<node pkg="bender_behaviors" type="Manipulation.py" name="Manipulation" />
+
+</launch>

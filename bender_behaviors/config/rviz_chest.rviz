@@ -1,0 +1,452 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /Status1
+      Splitter Ratio: 0.38646
+    Tree Height: 463
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+      - /Publish Point1
+    Name: Tool Properties
+    Splitter Ratio: 0.588679
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Experimental: false
+    Name: Time
+    SyncMode: 0
+    SyncSource: laser_front
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 0.5
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.03
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 50
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        base_footprint:
+          Value: true
+        base_laser_link:
+          Value: true
+        base_link:
+          Value: true
+        bender/base_link:
+          Value: true
+        bender/head_link:
+          Value: true
+        bender/neck_link:
+          Value: true
+        bender/odom:
+          Value: true
+        bender/sensors/camera_left_eye_link:
+          Value: true
+        bender/sensors/camera_right_eye_link:
+          Value: true
+        bender/sensors/laser_front_link:
+          Value: true
+        bender/sensors/laser_rear_link:
+          Value: true
+        bender/sensors/rgbd_head_link:
+          Value: true
+        bender/sensors/rgbd_waist_link:
+          Value: true
+        bender/torso_link:
+          Value: true
+        map:
+          Value: true
+        odom:
+          Value: true
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Tree:
+        map:
+          bender/odom:
+            odom:
+              base_footprint:
+                base_link:
+                  base_laser_link:
+                    {}
+                  bender/base_link:
+                    bender/sensors/laser_front_link:
+                      {}
+                    bender/sensors/laser_rear_link:
+                      {}
+                    bender/torso_link:
+                      bender/neck_link:
+                        bender/head_link:
+                          bender/sensors/camera_left_eye_link:
+                            {}
+                          bender/sensors/camera_right_eye_link:
+                            {}
+                          bender/sensors/rgbd_head_link:
+                            {}
+                      bender/sensors/rgbd_waist_link:
+                        {}
+      Update Interval: 0
+      Value: true
+    - Class: rviz/Axes
+      Enabled: true
+      Length: 0.5
+      Name: Origin
+      Radius: 0.06
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Class: rviz/Group
+      Displays:
+        - Alpha: 0.7
+          Class: rviz/Map
+          Color Scheme: map
+          Draw Behind: false
+          Enabled: true
+          Name: Map
+          Topic: /map
+          Value: true
+        - Class: rviz/Group
+          Displays:
+            - Arrow Length: 0.3
+              Class: rviz/PoseArray
+              Color: 255; 161; 66
+              Enabled: true
+              Name: amcl estimation
+              Topic: /bender/nav/particlecloud
+              Value: true
+          Enabled: true
+          Name: localization
+        - Class: rviz/Group
+          Displays:
+            - Alpha: 1
+              Buffer Length: 1
+              Class: rviz/Path
+              Color: 255; 36; 29
+              Enabled: true
+              Name: Local Plan
+              Topic: /bender/nav/move_base/TrajectoryPlannerROS/global_plan
+              Value: true
+            - Alpha: 1
+              Buffer Length: 1
+              Class: rviz/Path
+              Color: 40; 255; 17
+              Enabled: true
+              Name: Global Plan
+              Topic: /bender/nav/move_base/NavfnROS/plan
+              Value: true
+            - Alpha: 0.05
+              Autocompute Intensity Bounds: true
+              Autocompute Value Bounds:
+                Max Value: 0
+                Min Value: 0
+                Value: true
+              Axis: Z
+              Channel Name: total_cost
+              Class: rviz/PointCloud2
+              Color: 255; 255; 255
+              Color Transformer: Intensity
+              Decay Time: 0
+              Enabled: false
+              Invert Rainbow: false
+              Max Color: 255; 255; 255
+              Max Intensity: 434
+              Min Color: 0; 0; 0
+              Min Intensity: 19.6
+              Name: Cost Map
+              Position Transformer: XYZ
+              Queue Size: 10
+              Selectable: true
+              Size (Pixels): 3
+              Size (m): 0.01
+              Style: Points
+              Topic: /bender/nav/move_base/TrajectoryPlannerROS/cost_cloud
+              Use Fixed Frame: true
+              Use rainbow: true
+              Value: false
+            - Alpha: 0.95
+              Class: rviz/Map
+              Color Scheme: costmap
+              Draw Behind: true
+              Enabled: false
+              Name: Map
+              Topic: /bender/nav/move_base/global_costmap/costmap
+              Value: false
+            - Alpha: 0.7
+              Class: rviz/Map
+              Color Scheme: costmap
+              Draw Behind: false
+              Enabled: false
+              Name: Map
+              Topic: /bender/nav/move_base/local_costmap/costmap
+              Value: false
+            - Alpha: 1
+              Class: rviz/Polygon
+              Color: 2; 124; 255
+              Enabled: true
+              Name: Footprint Global
+              Topic: /bender/nav/move_base/global_costmap/obstacle_layer_footprint/footprint_stamped
+              Value: true
+            - Alpha: 1
+              Class: rviz/Polygon
+              Color: 60; 255; 26
+              Enabled: true
+              Name: Footprint Local
+              Topic: /bender/nav/move_base/local_costmap/obstacle_layer_footprint/footprint_stamped
+              Value: true
+          Enabled: true
+          Name: move_base
+        - Class: rviz/Group
+          Displays:
+            - Alpha: 1
+              Class: rviz/Polygon
+              Color: 25; 255; 0
+              Enabled: true
+              Name: ApproachPolygon
+              Topic: /bender/nav/goal_server/polygon_approach
+              Value: true
+            - Alpha: 1
+              Autocompute Intensity Bounds: true
+              Autocompute Value Bounds:
+                Max Value: 10
+                Min Value: -10
+                Value: true
+              Axis: Z
+              Channel Name: intensity
+              Class: rviz/PointCloud
+              Color: 255; 255; 255
+              Color Transformer: RGB8
+              Decay Time: 0
+              Enabled: true
+              Invert Rainbow: false
+              Max Color: 255; 255; 255
+              Max Intensity: 4096
+              Min Color: 0; 0; 0
+              Min Intensity: 0
+              Name: ApproachPoints
+              Position Transformer: XYZ
+              Queue Size: 10
+              Selectable: true
+              Size (Pixels): 3
+              Size (m): 0.01
+              Style: Points
+              Topic: /bender/nav/goal_server/points_approach
+              Use Fixed Frame: true
+              Use rainbow: true
+              Value: true
+            - Alpha: 1
+              Axes Length: 1
+              Axes Radius: 0.1
+              Class: rviz/Pose
+              Color: 255; 25; 0
+              Enabled: true
+              Head Length: 0.3
+              Head Radius: 0.1
+              Name: Goal
+              Shaft Length: 1
+              Shaft Radius: 0.05
+              Shape: Arrow
+              Topic: /bender/nav/goal_server/goal
+              Value: true
+          Enabled: true
+          Name: goal_server
+        - Class: rviz/Group
+          Displays:
+            - Alpha: 1
+              Class: rviz/Polygon
+              Color: 164; 255; 16
+              Enabled: true
+              Name: map_polygon
+              Topic: /bender/nav/map_analyzer/map_polygon
+              Value: true
+            - Alpha: 1
+              Class: rviz/Polygon
+              Color: 255; 26; 29
+              Enabled: true
+              Name: map_bbox
+              Topic: /bender/nav/map_analyzer/map_bounding_box
+              Value: true
+          Enabled: true
+          Name: map_analyzer
+      Enabled: true
+      Name: Navigation
+    - Class: rviz/Group
+      Displays:
+        - Alpha: 1
+          Autocompute Intensity Bounds: true
+          Autocompute Value Bounds:
+            Max Value: 10
+            Min Value: -10
+            Value: true
+          Axis: Z
+          Channel Name: intensities
+          Class: rviz/LaserScan
+          Color: 160; 255; 0
+          Color Transformer: FlatColor
+          Decay Time: 0
+          Enabled: true
+          Invert Rainbow: false
+          Max Color: 255; 255; 255
+          Max Intensity: 1
+          Min Color: 0; 0; 0
+          Min Intensity: 1
+          Name: laser_front
+          Position Transformer: XYZ
+          Queue Size: 10
+          Selectable: false
+          Size (Pixels): 3
+          Size (m): 0.01
+          Style: Points
+          Topic: /bender/sensors/laser_front/scan
+          Use Fixed Frame: true
+          Use rainbow: true
+          Value: true
+        - Alpha: 1
+          Autocompute Intensity Bounds: true
+          Autocompute Value Bounds:
+            Max Value: 10
+            Min Value: -10
+            Value: true
+          Axis: Z
+          Channel Name: intensity
+          Class: rviz/LaserScan
+          Color: 160; 255; 7
+          Color Transformer: FlatColor
+          Decay Time: 0
+          Enabled: true
+          Invert Rainbow: false
+          Max Color: 255; 255; 255
+          Max Intensity: 4096
+          Min Color: 0; 0; 0
+          Min Intensity: 0
+          Name: laser_rear
+          Position Transformer: XYZ
+          Queue Size: 10
+          Selectable: false
+          Size (Pixels): 3
+          Size (m): 0.01
+          Style: Points
+          Topic: /bender/sensors/laser_front/scan
+          Use Fixed Frame: true
+          Use rainbow: true
+          Value: true
+      Enabled: true
+      Name: Sensors
+    - Class: rviz/Group
+      Displays:
+        - Class: rviz/MarkerArray
+          Enabled: true
+          Marker Topic: /bender/laser/leg_detector/detection_markers
+          Name: leg detections
+          Namespaces:
+            {}
+          Queue Size: 100
+          Value: true
+        - Class: rviz/Marker
+          Enabled: false
+          Marker Topic: /bender/laser/leg_detector/edge_detections
+          Name: edge detection
+          Namespaces:
+            {}
+          Queue Size: 100
+          Value: false
+      Enabled: true
+      Name: LegDetector
+    - Class: rviz/Group
+      Displays:
+        - Class: rviz/MarkerArray
+          Enabled: true
+          Marker Topic: /bender/macros/person_blocking_detector/blocking_markers
+          Name: blockers
+          Namespaces:
+            {}
+          Queue Size: 100
+          Value: true
+      Enabled: true
+      Name: Blocker Detector
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: map
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+    - Class: rviz/FocusCamera
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+      Topic: /bender/nav/initialpose
+    - Class: rviz/SetGoal
+      Topic: /bender/nav/goal_server/goal
+    - Class: rviz/PublishPoint
+      Single click: true
+      Topic: /clicked_point
+  Value: true
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 18.8411
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.06
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: 1.59194
+        Y: -4.91407
+        Z: -0.492909
+      Name: Current View
+      Near Clip Distance: 0.01
+      Pitch: 1.5698
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 4.69002
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 744
+  Hide Left Dock: false
+  Hide Right Dock: true
+  QMainWindow State: 000000ff00000000fd0000000400000000000002d70000025efc0200000007fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c00610079007301000000280000025e000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000002c4fc0200000003fb0000001e0054006f006f006c002000500072006f007000650072007400690065007300000000280000017c0000006400fffffffc000001aa000001420000000000fffffffa000000000100000002fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000000ffffffff0000000000000000fb0000000a0056006900650077007300000003a10000010f0000010f00fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000005150000003efc0100000002fb0000000800540069006d0065010000000000000515000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000002380000025e00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: true
+  Views:
+    collapsed: true
+  Width: 1301
+  X: 378
+  Y: 102

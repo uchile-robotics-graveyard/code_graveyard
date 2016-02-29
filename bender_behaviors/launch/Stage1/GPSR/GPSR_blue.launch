@@ -1,0 +1,21 @@
+<launch>
+
+	<!-- Sensors-->
+	<!-- rgbd_head -->
+	<include file="$(find bender_sensors)/launch/rgbd/rgbd_head.launch"/>
+
+	<!-- table detector -->
+	<include file="$(find bender_pcl)/launch/furniture/table_detector.launch"/>
+
+	<!-- person detector -->
+	<include file="$(find bender_pcl)/launch/person_detector.launch"/>
+
+	<!-- Detector Objetos -->
+	<include file="$(find bender_pcl)/launch/Object_Recognition_Head.launch" />
+	
+	<!-- DEPTH -->
+	<include file="$(find bender_pcl_to_scan)/launch/depth_to_laserscan.launch" />
+
+	<!-- Plane detector -->
+	<node name="PlaneDetector" pkg="bender_pl_libs" type="PlaneDetector" />
+</launch>

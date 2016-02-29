@@ -1,0 +1,14 @@
+<launch>
+
+	<!-- Sensors-->
+	<!-- rgbd_head -->
+	<!-- <include file="$(find bender_sensors)/launch/rgbd/rgbd_head.launch"/> -->
+
+	<!--  Objetos -->
+
+	<include file="$(find bender_vision_interface)/launch/collision_object.launch" />
+
+	<!-- Detector Table -->
+	<include file="$(find bender_pcl)/launch/furniture/table_detector.launch" />
+
+</launch>

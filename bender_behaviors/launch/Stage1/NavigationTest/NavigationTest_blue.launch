@@ -1,0 +1,15 @@
+<launch>
+
+	<!-- - - - - - - - - - -  Hardware  - - - - - - - - - - - - -->
+
+	<!-- Sensors-->
+	<!-- rgbd_head -->
+	<include file="$(find bender_sensors)/launch/rgbd/rgbd_head.launch"/>
+
+	<!-- pcl to scan nodelet -->
+	<include file="$(find bender_pcl_to_scan)/launch/depth_to_laserscan.launch"/>
+
+	<!-- person detector -->
+	<include file="$(find bender_pcl)/launch/person_detector.launch"/>
+
+</launch>

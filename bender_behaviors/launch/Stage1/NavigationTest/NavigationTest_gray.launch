@@ -1,0 +1,32 @@
+<launch>
+
+	<!-- - - - - - - - - - -  Hardware  - - - - - - - - - - - - -->
+	<!-- rgbd_head motor -->
+	<include file="$(find bender_arm_control)/launch/r_arm_port.launch"/>
+	<include file="$(find bender_arm_control)/launch/head.launch"/>
+
+	<!-- face -->
+	<include file="$(find bender_face)/launch/face.launch"/>
+
+	<!-- camera right eye -->
+	<include file="$(find bender_sensors)/launch/camera/camera_right_eye.launch">
+		<arg name="display" value="false"/>
+		<arg name="cam_number" value="1"/>
+	</include>
+
+
+	<!-- - - - - - - - - - - - S p e e c h - - - - - - - - - - -->
+	<include file="$(find bender_speech)/launch/complete_speech.launch"/>
+
+
+	<!-- - - - - - - - - - - - V i s i o n - - - - - - - - - - -->
+	<!-- Face Detector -->
+	<include file="$(find bender_vision)/launch/face/face_detector.launch">
+		<arg name="cam_name" value="camera_right_eye"/>
+		<arg name="display"  value="true"/>
+	</include>
+
+	<!-- rviz -->
+	<include file="$(find bender_utils)/launch/rviz.launch"/>
+
+</launch>

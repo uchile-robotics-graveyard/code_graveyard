@@ -1,0 +1,34 @@
+<launch>
+	<!-- Parametros -->
+	<arg name="simulation"   default="false"/>
+	<arg name="display" default="false"/>
+	<arg name="cam_name" default="camera_right_eye"/>
+	<arg name="cam_number" default="6"/> 
+	<arg name="language" default="english"/>
+	<arg name="lm" default="false" />
+	<arg name="show_subtitles" default="true"/>
+
+
+	<!-- head -->
+
+	
+	<!-- Brazos -->
+	<include file="$(find bender_arm_control)/launch/r_arm_port.launch"/>
+	<include file="$(find bender_arm_control)/launch/head.launch"/>
+	<include file="$(find bender_arm_control)/launch/r_arm.launch" />
+	<include file="$(find bender_arm_control)/launch/l_arm.launch" />
+	<include file="$(find bender_arm_control)/launch/planning.launch" />
+
+
+	<!-- Speech Synthesizer -->
+	<include file="$(find bender_speech)/launch/synthesizer.launch">
+		<arg name="language" value="$(arg language)"/>
+		<arg name="show_subtitles" value="$(arg show_subtitles)"/>
+	</include>
+
+		<!-- report generator -->
+	<include file="$(find bender_report_generator)/launch/report_generator.launch"/>
+	
+
+	
+</launch>

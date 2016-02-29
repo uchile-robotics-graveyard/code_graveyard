@@ -1,0 +1,24 @@
+<launch>
+	<!-- Parametros -->
+	<arg name="simulation"   default="false"/>
+	<arg name="display" default="true"/>
+	<arg name="cam_name" default="camera_right_eye"/>
+	<arg name="cam_number" default="1"/> 
+	<arg name="mapper_cfg_yaml" default="mapper.yaml"/>
+
+	<!-- camera -->
+<!-- 	<include file="$(find bender_sensors)/launch/camera/camera_right_eye.launch">
+		<arg name="cam_number" value="$(arg cam_number)"/>
+		<arg name="display" value="$(arg display)"/>
+	</include>
+ -->
+		<!-- - - - - - - - - - - - S p e e c h  I n t e r a c t i o n  - - - - - - - - - - -->
+	<include file="$(find bender_speech)/launch/complete_speech.launch"/>
+	<include file="$(find bender_speech)/launch/interaction.launch" />
+
+	<!-- utilities -->
+	<include file="$(find bender_utilities)/launch/mapper.launch">
+		<arg name="cfg_yaml" value="$(arg mapper_cfg_yaml)"/>
+	</include> 
+
+</launch>

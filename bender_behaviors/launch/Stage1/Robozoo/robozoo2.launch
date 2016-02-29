@@ -1,0 +1,13 @@
+<launch>
+
+	<!-- joystick -->
+	<include file="$(find bender_joy)/launch/joy.launch"/>
+
+
+
+	<!-- speech - synthetizer -->
+	<include file="$(find bender_speech)/launch/synthesizer.launch"/>
+
+	<node pkg="bender_behaviors" type="robozoo.py" name="robozoo" respawn="false" output="screen"/>
+
+</launch>

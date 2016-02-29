@@ -1,0 +1,7 @@
+
+<launch>
+
+	<!-- RVIZ -->
+	<node name="rviz_chest" pkg="rviz" type="rviz" args="-d $(find bender_behaviors)/config/rviz_chest.rviz"/>
+
+</launch>

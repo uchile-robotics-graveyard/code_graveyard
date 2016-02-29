@@ -1,0 +1,37 @@
+<launch>
+
+	<!-- Parametros -->
+	<arg name="display" default="false"/>
+	<arg name="cam_name" default="camera_right_eye"/>
+	<arg name="cam_number" default="1"/>
+	<arg name="use_double_mic" default="true"/>
+
+	<!-- Hardware -->
+<!-- 	<include file="$(find bender_sensors)/launch/camera/$(arg cam_name).launch">
+		<arg name="display" value="$(arg display)"/>
+		<arg name="cam_number" value="$(arg cam_number)"/>
+	</include> -->
+
+	<include file="$(find bender_sensors)/launch/rgbd/rgbd_head.launch"/>
+
+	<!-- - - - - - - - - - - - S p e e c h - - - - - - - - - - -->
+	<include file="$(find bender_speech)/launch/complete_speech.launch">
+		<arg name="use_double_mic" value="$(arg use_double_mic)" />
+	</include>
+	
+	<!-- - - - - - - - - - - - I n t e r a c t i o n  - - - - - - - - - - -->
+	<include file="$(find bender_speech)/launch/interaction.launch" />
+	<!-- - - - - - - - - - - - V i s i o n - - - - - - - - - - -->
+
+	<include file="$(find bender_arm_control)/launch/r_arm_port.launch"/>
+	<include file="$(find bender_arm_control)/launch/head.launch"/>
+	
+	<!-- Face Detector -->
+	<include file="$(find bender_vision)/launch/face/face_detector.launch">
+		<arg name="cam_name" value="$(arg cam_name)"/>
+		<arg name="display" value="$(arg display)"/>
+	</include>
+
+	<!-- Caritas -->
+	<include file="$(find bender_face)/launch/face.launch"/>
+</launch>

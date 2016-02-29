@@ -1,0 +1,30 @@
+<launch>
+
+	<arg name="cam_number" default="1"/>
+	<arg name="display" default="true"/>
+	
+	<!-- Parametros -->
+	<arg name="simulation"  default="false"/>
+	<arg name="rviz"        default="true"/>
+	<arg name="model_type" default="kinect"/>
+	
+	<!-- - - - - - - - - - - - N a v i g a t i o n - - - - - - - - - - -->
+	<include file="$(find bender_nav)/launch/complete_follow.launch">
+		<arg name="simulation" value="$(arg simulation)"/>
+		<arg name="rviz" value="$(arg rviz)"/>
+		<arg name="model_type" value="$(arg model_type)"/>
+	</include>
+
+	<!-- - - - - - - - - - - - - O T R O S - - - - - - - - - - - - - - - - -->
+
+	<!-- door open detector laser -->
+	<include file="$(find bender_vision)/launch/furniture/door_open_detector_laser.launch"/>
+	
+	<include file="$(find mp_tracker)/launch/demo.launch"/>
+
+		<include file="$(find bender_sensors)/launch/camera/camera_right_eye.launch">
+		<arg name="cam_number" value="$(arg cam_number)"/>
+		<arg name="display" value="$(arg display)"/>
+	</include>
+
+</launch>

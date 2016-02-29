@@ -1,0 +1,39 @@
+<launch>
+
+	<!-- Parametros -->
+	<arg name="display" default="false"/>
+	<arg name="cam_name" default="camera_right_eye"/>
+	<arg name="cam_number" default="1"/> 
+
+	<include file="$(find bender_sensors)/launch/camera/camera_right_eye.launch">
+		<arg name="cam_number" value="$(arg cam_number)"/>
+		<arg name="display" value="$(arg display)"/>
+	</include>
+
+	<!-- Speech -->
+	<include file="$(find bender_speech)/launch/complete_speech.launch"/>
+
+	<!-- Face Recognition -->
+	<include file="$(find bender_vision)/launch/face/face_recognition.launch">
+		<arg name="cam_name" value="$(arg cam_name)"/>
+		<arg name="display" value="$(arg display)"/>
+	</include>
+
+	<!-- Emotion Recognition -->
+	<include file="$(find bender_vision)/launch/emotion_detector.launch"/>
+
+	<!-- Gender Recognition -->
+	<node name="Gender_Detection" pkg="bender_vision" type="Gender_Detection" />
+
+	<!-- rgbd head motor -->
+	<include file="$(find bender_arm_control)/launch/r_arm_port.launch"/>
+	<include file="$(find bender_arm_control)/launch/head.launch"/>
+	<!-- include file="$(find bender_tf)/launch/tf_model.launch" / -->
+
+
+	<include file="$(find bender_face)/launch/face.launch"/>
+
+	<include file="$(find bender_state)/launch/state.launch"/>
+
+
+</launch>

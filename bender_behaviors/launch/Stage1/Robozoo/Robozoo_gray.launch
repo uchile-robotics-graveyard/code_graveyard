@@ -1,0 +1,41 @@
+<launch>
+
+	<!-- Camera makeup -->
+	<!-- Parametros -->
+	<arg name="display" default="true"/>
+	<arg name="cam_name" default="camera_right_eye"/>
+	<arg name="cam_number" default="1"/> 
+	<!-- Hardware -->
+	<include file="$(find bender_sensors)/launch/camera/$(arg cam_name).launch">
+		<arg name="display" value="$(arg display)"/>
+		<arg name="cam_number" value="$(arg cam_number)"/>
+	</include>
+
+<!-- 	<include file="$(find bender_sensors)/launch/camera/camera.launch">
+		<arg name="display" value="$(arg display)"/>
+		<arg name="cam_number" value="2"/>
+	</include> -->
+
+	<!-- camera selfie -->
+	<include file="$(find bender_sensors)/launch/camera/camera_selfie.launch"/>
+
+	<!-- joystick -->
+	<!-- <include file="$(find bender_joy)/launch/joy.launch"/> -->
+
+	<include file="$(find bender_arm_control)/launch/l_arm.launch"/>
+
+	<!-- nodo mascaras -->
+	<node pkg="bender_fun" type="videomask" name="videomask" respawn="true">
+	</node>
+
+	<include file="$(find bender_fun)/launch/sound_player.launch"/>
+
+	<!-- speech - synthetizer -->
+	<include file="$(find bender_speech)/launch/synthesizer.launch"/>
+
+	<!-- face emotions -->
+	<include file="$(find bender_face)/launch/face.launch"/>
+
+<!-- 	<node pkg="bender_behaviors" type="robozoo.py" name="robozoo" respawn="false" output="screen"/>
+ -->
+</launch>

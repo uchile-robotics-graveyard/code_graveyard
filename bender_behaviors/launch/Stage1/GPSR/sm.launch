@@ -1,0 +1,14 @@
+<launch>
+	
+	<arg name="cfg_yaml" default="gspr.yaml"/>
+	<arg name="speech_yaml" default="speechparser.yaml"/>
+	<arg name="manipulation_yaml" default="manipulation.yaml"/>
+
+	<node pkg="bender_behaviors" type="ParseOrder.py" name="ParseOrder">
+	<!-- <node pkg="bender_behaviors" type="GPSR.py" name="ParseOrder"> -->
+		<rosparam file="$(find bender_utils)/config/mapper/$(arg cfg_yaml)"/>
+		<rosparam file="$(find bender_utils)/config/mapper/$(arg speech_yaml)"/>
+		<rosparam file="$(find bender_utils)/config/mapper/$(arg manipulation_yaml)"/>
+	</node>
+
+</launch>

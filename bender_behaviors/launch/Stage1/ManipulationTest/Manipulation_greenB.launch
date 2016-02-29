@@ -1,0 +1,8 @@
+<launch>
+
+	<include file="$(find bender_sensors)/launch/rgbd/rgbd_waist.launch"/>
+
+	<!-- Detector Objetos -->
+	<include file="$(find bender_pcl)/launch/Object_Recognition_Waist.launch"/>
+
+</launch>
