@@ -1,0 +1,16 @@
+<launch>
+
+    <!-- Rosaria -->
+    <include file="$(find bender_nav)/launch/rosaria.launch"/>
+
+    <!-- Visión -->
+    <include file="$(find bender_vision)/launch/LaserTracker.launch"/>
+    
+    <!-- Laser Follow -->
+    <node name="laser_follow" pkg="bender_behaviors" type="laser_follow.py"/>
+
+    <!-- Herramientas para debug -->
+    <node name="smach_viewer" pkg="smach_viewer" type="smach_viewer.py"/>
+    <!--node name="graph_cmd_vel" pkg="rqt_plot" type="rqt_plot" args="/cmd_vel/linear/x /cmd_vel/angular/z"/-->
+
+</launch>

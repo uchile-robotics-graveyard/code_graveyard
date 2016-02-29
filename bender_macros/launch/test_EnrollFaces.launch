@@ -1,0 +1,12 @@
+<launch>
+
+	<!-- speech -->
+	<include file="$(find bender_speech)/launch/speech.launch"/>
+
+	<!-- vision  -->
+	<include file="$(find bender_vision)/launch/face/face_recognition.launch"/>
+	
+	<!-- macro -->
+	<!--node name="enroll_face" pkg="bender_macros" type="enroll_face" output="screen"/-->
+	
+</launch>

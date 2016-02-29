@@ -1,0 +1,16 @@
+<launch>
+
+	<!-- Manejo de la Base -->
+	<include file="$(find bender_nav)/launch/rosaria.launch"/>
+
+	<!-- Speech -->
+	<include file="$(find bender_speech)/launch/speech.launch"/>
+	
+	<!-- Kinect Tracker -->
+	<include file="$(find bender_vision)/launch/kinect_tracker.launch"/>
+
+	<!-- Herramientas para debug -->
+    <node name="smach_viewer" pkg="smach_viewer" type="smach_viewer.py"/>
+	
+
+</launch>

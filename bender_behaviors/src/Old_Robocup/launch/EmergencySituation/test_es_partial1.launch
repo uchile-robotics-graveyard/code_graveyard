@@ -1,0 +1,51 @@
+<launch>
+
+	<!-- Parametros -->
+	<arg name="display"  default="true"/>
+	<arg name="cam_name" default="camera_right_eye"/>
+
+
+	<!-- - - - - - - - - - -  Hardware  - - - - - - - - - - - - -->
+	<!-- camera right eye -->
+	<include file="$(find bender_sensors)/launch/camera/$(arg cam_name).launch">
+		<arg name="display" value="false"/>
+		<arg name="cam_number" value="0"/>
+	</include>
+
+	<!-- - - - - - - - - - - - S p e e c h - - - - - - - - - - -->
+	<include file="$(find bender_speech)/launch/speech.launch">
+		<arg name="use_mic_configure" value="false"/>
+	</include>
+	<include file="$(find bender_speech)/launch/ask_question.launch"/>
+
+	<!-- - - - - - - - - - - - N a v i g a t i o n - - - - - - - - - - -->
+	<include file="$(find bender_nav)/launch/complete_nav.launch">
+	  <arg name="simulation" value="true"/>
+	  <arg name="rviz"       value="true"/>
+	</include>
+
+
+	<!-- - - - - - - - - - - report generator - - - - - - - - - - -->
+	<include file="$(find bender_report_generator)/launch/report_generator.launch"/>
+
+	<!-- - - - - - - - - - - - V i s i o n - - - - - - - - - - -->
+
+	<!-- Blob Filter maco>40y 100-->
+	<node name="blob_filter" pkg="bender_vision" type="blob_filter" ns="/bender/vision/" output="screen">
+		<param name="cam_name" value="$(arg cam_name)"/>
+		<param name="color_thresh" value="120"/>
+		<param name="color_thresh_max" value="180"/>
+		<param name="min_blob_size" value="50"/>
+	</node>
+
+	<node name="blob_filter_display" pkg="bender_vision" type="blob_filter_display" output="screen" required="false" ns="/bender/vision/">
+		<param name="cam_name" value="$(arg cam_name)"/>
+	</node>
+
+	<node  name="emergency_detector" pkg="bender_vision" type="emergency_detector" ns="/bender/vision/">
+		<param name="cam_name" value="$(arg cam_name)"/>
+	</node>
+
+	<!-- door open detector laser -->
+	<include file="$(find bender_vision)/launch/furniture/door_open_detector_laser.launch"/>
+</launch>

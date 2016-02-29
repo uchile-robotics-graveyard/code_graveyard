@@ -1,0 +1,20 @@
+<launch>
+
+	<!-- Rosaria -->
+	<!-- Manejo de la Base -->
+	<node pkg="ROSARIA" type="RosAria" name="RosAria" output="log">
+		<remap from="/RosAria/cmd_vel" to="/cmd_vel" />
+	</node>
+
+	
+	<!-- Kinect Tracker -->
+	<include file="$(find bender_vision)/launch/kinect_tracker.launch"/>
+
+	<!-- Laser Follow -->
+	<node name="kinect_follow" pkg="bender_behaviors" type="kinect_follow.py"/>
+
+	<!-- Herramientas para debug -->
+    	<node name="smach_viewer" pkg="smach_viewer" type="smach_viewer.py"/>
+	
+
+</launch>

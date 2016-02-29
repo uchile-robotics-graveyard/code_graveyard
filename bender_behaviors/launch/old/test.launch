@@ -1,0 +1,12 @@
+<launch>
+
+
+	<!-- S P E E C H (BENDERNAV) -->
+	<node name="speech_synthesizer" pkg="bender_speech" type="synthesizer_esp">
+		<remap from="speech_synthesizer/diagnostics" to="diagnostics"/>
+  	</node>
+
+	<node name="sound_play" pkg="sound_play" type="soundplay_node.py" output="screen"/>
+
+
+</launch>

@@ -1,0 +1,12 @@
+<launch>
+
+  <!-- Kinect Tracker -->
+  <include file="$(find bender_vision)/launch/tracking/kinect_tracker.launch"/>
+  
+  <!-- macro -->
+  <include file="$(find bender_macros)/launch/search_waving.launch"/>
+  
+  <!-- Sift (RECORDAR HACER TRAIN)-->
+  <include file="$(find bender_vision)/launch/object/obj_rec.launch"/>
+
+</launch>

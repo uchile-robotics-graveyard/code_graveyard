@@ -1,0 +1,34 @@
+<launch>
+
+  <!-- Parametros -->
+  <arg name="simulation"   default="true"/>
+  <arg name="display"    default="true"/>
+  <arg name="cam_name"   default="camera_right_eye"/>
+
+
+  <!-- - - - - - - - - - -  Hardware  - - - - - - - - - - - - -->
+
+  <!-- face -->
+  <include file="$(find bender_face)/launch/face.launch"/>
+
+  <!-- Face Recognition -->
+  <include file="$(find bender_vision)/launch/face/face_recognition.launch">
+    <arg name="display" value="true"/>
+    <arg name="cam_name" value="camera_right_eye"/>
+  </include>
+
+  <node name="followface" pkg="bender_fun"  type="followface" />
+  
+  <!-- - - - - - - - - - - - S p e e c h - - - - - - - - - - -->
+  <include file="$(find bender_speech)/launch/speech.launch"/>
+  <include file="$(find bender_speech)/launch/interaction.launch"/>
+
+  <!-- - - - - - - - - - - - - A r m s - - - - - - - - - - - - - - - - -->
+  <include file="$(find bender_arm)/launch/complete_arms.launch"/>
+
+  <!-- camera right eye -->
+  <include file="$(find bender_sensors)/launch/camera/camera_right_eye.launch">
+    <arg name="display" value="$(arg display)"/>
+  </include>
+
+</launch>

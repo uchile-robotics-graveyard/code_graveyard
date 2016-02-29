@@ -1,0 +1,41 @@
+<launch>
+
+	<!-- Parametros -->
+	<arg name="simulation"   default="false"/>
+	<arg name="display" default="false"/>
+	<arg name="cam_name" default="camera_right_eye"/>
+	<arg name="cam_number" default="6"/> 
+
+	<!-- Hardware -->
+	<include file="$(find bender_sensors)/launch/camera/$(arg cam_name).launch">
+		<arg name="display" value="false"/>
+		<arg name="cam_number" value="$(arg cam_number)"/>
+	</include>
+
+	<!-- - - - - - - - - - - - N a v i g a t i o n - - - - - - - - - - -->
+	<!--include file="$(find bender_nav)/launch/complete_nav.launch">
+		<arg name="simulation" value="$(arg simulation)"/>
+		<arg name="rviz" value="$(arg display)"/>
+	</include-->
+
+	<!-- - - - - - - - - - - - S p e e c h - - - - - - - - - - -->
+	<include file="$(find bender_speech)/launch/macros_speech.launch"/>
+	
+	<!-- - - - - - - - - - - - V i s i o n - - - - - - - - - - -->
+
+	<!-- Face Detector -->
+	<include file="$(find bender_vision)/launch/face/face_detector.launch">
+		<arg name="cam_name" value="$(arg cam_name)"/>
+		<arg name="display" value="$(arg display)"/>
+	</include>
+
+	<!-- Caritas -->
+	<!--include file="$(find bender_face)/launch/face.launch"/-->
+
+	<!-- Subtitulos -->
+	<!--include file="$(find bender_utilities)/launch/subtitles.launch"/-->
+
+	<!-- - - - - - - - -  B e h a v i o r  - - - - - - - - - - - - - - - -->
+	<!--node pkg="bender_behaviors" type="WhatDidYouSay.py" name="WhatDidYouSay" respawn="false" output="screen"/-->
+
+</launch>

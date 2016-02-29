@@ -1,0 +1,24 @@
+<launch>
+
+	<!-- Rosaria -->
+	<include file="$(find bender_nav)/launch/rosaria.launch"/>
+
+	<!-- Visión -->
+	<arg name="cam_service" default="camera_service" />
+	<arg name="cam_number" value="1"/>
+	<arg name="cam_width" value="320"/>
+	<arg name="cam_height" value="240"/>
+	<include file="$(find bender_vision)/launch/bender_vision.launch">
+		<arg name="cam_number" value="$(arg cam_number)" />
+		<arg name="cam_width" value="$(arg cam_width)" />
+		<arg name="cam_height" value="$(arg cam_height)" />
+	</include>
+	
+	<!-- Follow -->
+	<node name="face_follow" pkg="bender_behaviors" type="face_follow.py"/>
+
+	<!-- Herramientas para debug -->
+	<node name="smach_viewer" pkg="smach_viewer" type="smach_viewer.py"/>
+	<!--node name="graph_cmd_vel" pkg="rqt_plot" type="rqt_plot" args="/cmd_vel/linear/x /cmd_vel/angular/z"/-->
+
+</launch>

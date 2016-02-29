@@ -1,0 +1,9 @@
+<launch>
+
+
+	<!-- Sift (RECORDAR HACER TRAIN)-->
+	<include file="$(find bender_vision)/launch/object/obj_rec.launch"/>
+
+	<!--include file="$(find bender_pcl)/launch/furniture/table_detector.launch"/-->
+
+</launch>

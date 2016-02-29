@@ -1,0 +1,21 @@
+<launch>
+
+	<!-- Brazos -->
+	<include file="$(find bender_arm)/launch/complete_arms.launch"/>
+
+	<!-- rgbd Cabeza -->
+	<include file="$(find bender_sensors)/launch/rgbd/rgbd_head.launch"/>
+
+	<!-- Detectores Pato -->
+	<!--node name="PlaneSift" pkg="bender_vision" type="obj_rec.bash"/-->
+
+	<!-- Arm-Vision Interface -->
+	<node name="arm_vision_interface" pkg="bender_vision" type="ArmVisionInterface"/>
+
+	<!-- Caritas -->
+	<include file="$(find bender_face)/launch/face.launch"/>
+
+	<!-- Subtitulos -->
+	<include file="$(find bender_utilities)/launch/subtitles.launch"/>
+
+</launch>

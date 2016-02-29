@@ -1,0 +1,15 @@
+<launch>
+
+  <include file="$(env BENDER_CONFIG)/bender.machine" />
+
+  
+  <!-- Navigation -->
+  <include file="$(find bender_nav)/launch/complete_nav_vision.launch"/>
+
+  <!--Speech-->
+  <include file="$(find bender_speech)/launch/speech_chest.launch"/>
+
+  <node name="speech_nav" pkg="bender_behaviors" type="speech_nav_test.py" output="log" machine="BenderChest">
+  </node>
+
+</launch>

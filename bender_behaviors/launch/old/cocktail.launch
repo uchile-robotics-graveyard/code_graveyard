@@ -1,0 +1,25 @@
+<launch>
+
+	<!-- Navegacion -->
+	<include file="$(find bender_nav)/launch/complete_nav.launch"/>
+
+	<!-- map server (ELIMINAR AL DESCOMENTAR EL SEM_MAP) -->
+	<!--node name="semantic_map_server" pkg="bender_maps" type="semantic_map_server"/-->
+
+	<!-- openni -->
+	<include file="$(find openni_launch)/launch/openni.launch"/>
+
+	<!-- kinect Tracker -->
+	<node name="KinectTracker" pkg="bender_vision" type="KinectTracker"/>
+
+	<!-- speech -->
+	<include file="$(find bender_speech)/launch/speech.launch"/>
+
+	<!-- Door detector -->
+	<node name="door_open_detector" pkg="bender_vision" type="door_open_detector"/>
+
+	<!-- behavior -->
+	<node name="cocktail_test" pkg="bender_behaviors" type="cocktail_test.py"/>
+
+
+</launch>

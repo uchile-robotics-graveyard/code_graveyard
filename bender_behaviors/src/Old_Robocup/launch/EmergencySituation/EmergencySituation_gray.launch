@@ -1,0 +1,52 @@
+<launch>
+
+	<!-- Parametros -->
+	<arg name="simulation"   default="true"/>
+	<arg name="display"    default="true"/>
+	<arg name="cam_name"   default="camera_right_eye"/>
+
+
+	<!-- - - - - - - - - - -  Hardware  - - - - - - - - - - - - -->
+
+	<!-- face -->
+	<include file="$(find bender_face)/launch/face.launch"/>
+
+	<!-- Face Detector -->
+	<include file="$(find bender_vision)/launch/face/face_detector.launch">
+		<arg name="cam_name" value="$(arg cam_name)"/>
+		<arg name="display" value="false"/>
+	</include>
+	
+	<!-- - - - - - - - - - - - S p e e c h - - - - - - - - - - -->
+	<include file="$(find bender_speech)/launch/speech.launch"/>
+	<include file="$(find bender_speech)/launch/ask_question.launch"/>
+
+	<!-- - - - - - - - - - - - - A r m s - - - - - - - - - - - - - - - - -->
+	<include file="$(find bender_arm)/launch/complete_arms.launch"/>
+
+	<!-- report generator -->
+	<include file="$(find bender_report_generator)/launch/report_generator.launch"/>
+
+	<!-- camera right eye -->
+	<include file="$(find bender_sensors)/launch/camera/camera_right_eye.launch">
+		<arg name="display" value="$(arg display)"/>
+	</include>
+
+	<!-- camera thermal -->
+	<include file="$(find bender_sensors)/launch/camera/camera_thermal.launch">
+		<arg name="display" value="false"/>
+		<arg name="cam_connect_at_start" value="false"/>
+	</include>
+
+	<!-- Blob filter -->
+	<include file="$(find bender_vision)/launch/blob/blob_filter.launch">
+		<arg name="cam_name" value="camera_thermal"/>
+		<arg name="display" value="$(arg display)"/>
+	</include>
+
+	<!-- emergency detector -->
+	<node  name="emergency_detector" pkg="bender_vision" type="emergency_detector" ns="/bender/vision/">
+		<param name="cam_name" value="camera_thermal"/>
+	</node>
+
+</launch>

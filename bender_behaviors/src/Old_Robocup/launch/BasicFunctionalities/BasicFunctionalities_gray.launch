@@ -1,0 +1,35 @@
+<launch>
+	<!-- Parametros -->
+	<arg name="simulation"   default="false"/>
+	<arg name="display" default="false"/>
+	<arg name="cam_name" default="camera_right_eye"/>
+	<arg name="cam_number" default="6"/> 
+
+	<!-- Face Detector -->
+	<include file="$(find bender_vision)/launch/face/face_detector.launch">
+		<arg name="cam_name" value="$(arg cam_name)"/>
+		<arg name="display" value="$(arg display)"/>
+	</include>
+
+	<!-- Speech -->
+	<include file="$(find bender_speech)/launch/macros_speech.launch"/>
+	
+	<!-- Brazos -->
+	<include file="$(find bender_arm)/launch/complete_arms.launch"/>
+
+	<!-- Arm-Vision Interface -->
+	<!--node name="arm_vision_interface" pkg="bender_vision" type="ArmVisionInterface"/-->
+
+	<!-- Caritas -->
+	<include file="$(find bender_face)/launch/face.launch"/>
+
+	<!-- Camara Ojo -->
+	<include file="$(find bender_sensors)/launch/camera/$(arg cam_name).launch">
+		<arg name="display" value="false"/>
+		<arg name="cam_number" value="$(arg cam_number)"/>
+	</include>
+
+
+
+
+</launch>

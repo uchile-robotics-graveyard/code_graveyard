@@ -1,0 +1,9 @@
+<launch>
+
+	<!-- Detectores Pato -->
+	<include file="$(find bender_vision)/launch/object/obj_rec.launch">
+		<arg name="mapper_cfg_yaml" value="pick_and_place.yaml"/>
+	</include>
+
+	<include file="$(find bender_pcl)/launch/furniture/table_detector.launch"/>
+</launch>

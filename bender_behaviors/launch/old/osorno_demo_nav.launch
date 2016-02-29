@@ -1,0 +1,34 @@
+<launch>
+
+  <include file="$(env BENDER_CONFIG)/bender.machine" />
+
+
+
+	<!-- C A R I T A S -->
+	<node name="bender_face" pkg="bender_face" type="face.py" output="screen" machine="BenderChest"/>
+
+
+	<!-- S P E E C H -->
+	<node name="speech_synthesizer" pkg="bender_speech" type="synthesizer" machine="BenderNav">
+		<remap from="speech_synthesizer/diagnostics" to="diagnostics"/>
+  	</node>
+
+	<node name="sound_play" pkg="sound_play" type="soundplay_node.py" output="screen" machine="BenderNav"/>
+
+
+	<!-- M O V I M I E N T O -->
+
+	<!-- Rosaria -->
+	<node pkg="ROSARIA" type="RosAria" name="RosAria" output="log" machine="BenderNav"> 
+		<remap from="/RosAria/cmd_vel" to="/cmd_vel"/>
+	</node>
+
+	<!-- Teleoperacion -->
+	<node pkg="pr2_teleop" type="teleop_pr2_keyboard" respawn="true" name="spawn_teleop_keyboard" output="screen" machine="BenderVision">
+		<rosparam file="$(find bender_nav)/config/teleop_keyboard/teleop_keyboard.yaml" command="load"/>
+	</node>
+
+	<!-- B E H A V I O R -->
+	<node name="Osorno_nav_demo" pkg="bender_behaviors" type="osorno_nav.py" output="screen" machine="BenderVision"/>
+
+</launch>

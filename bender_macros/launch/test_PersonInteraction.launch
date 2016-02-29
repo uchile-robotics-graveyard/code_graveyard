@@ -1,0 +1,18 @@
+<launch>
+
+	<!-- speech -->
+	<include file="$(find bender_speech)/launch/speech.launch"/>
+
+	<!-- vision  -->
+	<include file="$(find bender_vision)/launch/face_recognition.launch"/>
+	
+	<!-- macro -->
+	<node name="enroll_macros" pkg="bender_macros" type="enroll_macros" output="screen"/>
+	<node name="enroll_person" pkg="bender_macros" type="enroll_person" output="screen"/>
+
+	<node name="search_face" pkg="bender_macros" type="search_face" output="screen">
+		<rosparam file="$(find bender_macros)/config/SearchFace.yaml"/>
+	</node>
+
+	<node name="interact_person" pkg="bender_speech" type="interact_speech" output="screen" respawn="true" launch-prefix="xterm -e"/>
+</launch>

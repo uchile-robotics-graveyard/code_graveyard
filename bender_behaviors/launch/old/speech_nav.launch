@@ -1,0 +1,18 @@
+<launch>
+
+  <!-- Navigation -->
+    <include file="$(find bender_nav)/launch/complete_nav.launch"/>
+
+  <node name="speech_recognizer" pkg="bender_speech" type="recognizer.py" output="screen">
+  </node>
+
+  <node name="speech_synthesizer" pkg="bender_speech" type="synthesizer" output="screen">
+	<remap from="speech_synthesizer/diagnostics" to="diagnostics"/>
+  </node>
+  <node name="sound_play" pkg="sound_play" type="soundplay_node.py" output="screen">
+  </node>
+
+  <node name="speech_nav" pkg="bender_behaviors" type="speech_nav_test.py" output="log">
+  </node>
+
+</launch>
