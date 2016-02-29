@@ -1,0 +1,38 @@
+
+# include model definitions
+include "../bender.inc"
+include "../useful_models.inc"
+include "map.inc"
+
+
+# - - - - - - - - World Configuration - - - - - - - - #
+
+# set the resolution of the underlying raytrace model in meters
+resolution 0.02
+
+# simulation timestep in milliseconds
+interval_sim 50
+
+# GUI window specifications
+window
+( 
+  # windows size
+  size [ 500 500 ]       # pixels
+
+  # camera options
+  center [ 1 -2.5 ]      # x,y [m]
+  rotate [ 0 0 ]         # pitch, yaw [degrees]
+  scale 40.000           # pixels/m
+  
+  # GUI options
+  show_data 1              # 1=on 0=off
+)
+
+
+# - - - - - - - - - - Model Loading - - - - - - - - - #
+
+# load the map
+brasil_map()
+
+# bender
+bender( pose [ 3.000 3.000 0.000 0.000 ] name "bender")
