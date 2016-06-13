@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- - - - - - - - - - - - N a v i g a t i o n - - - - - - - - - - -->
+  <include file="$(find bender_nav)/launch/complete_nav.launch">
+    <arg name="simulation" value="true"/>
+    <arg name="rviz"       value="true"/>
+  </include>
+
+</launch>

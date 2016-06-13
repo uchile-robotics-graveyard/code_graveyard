@@ -1,0 +1,14 @@
+<launch>
+
+	<!-- Navigation -->
+	<include file="$(find bender_nav)/launch/complete_nav.launch"/>
+
+	<!-- Kinect Tracker -->
+	<include file="$(find bender_vision)/launch/kinect_tracker.launch"/>
+	
+	<!-- macro -->
+	<!--node name="search_waving" pkg="bender_macros" type="search_waving" output="screen">
+		<rosparam file="$(find bender_macros)/config/SearchWaving.yaml"/>
+	</node-->
+	
+</launch>

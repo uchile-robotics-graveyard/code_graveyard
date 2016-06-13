@@ -1,0 +1,42 @@
+
+# Parameters for Search Face Macro
+
+
+# Search Settings
+# - - - - - - - - - - - - - - -
+
+# head positions used in each search process [degrees]
+head_angles: [ 35, 0, -35 ]
+
+
+# Recognition settings
+# - - - - - - - - - - - - - - - 
+
+# total recognition attempts. Or (total - 1)
+# when the desired face is found
+reco_attempts: 10
+
+# minimum recognized percentage to declare recognition
+# after 'reco_attempts' tries
+reco_th: 70.0
+
+# max distance to declare OK recognition
+reco_distance_th: 110.0
+
+
+# 2D camera settings
+# - - - - - - - - - - - - - -
+
+# camera field of view [degrees]
+fov_h: 60.0
+
+# width of camera images [pixels]
+camera_width: 640
+
+# camera frame
+camera_tf: "/bender/sensors/camera_right_eye_link"
+
+# polynomial model for camera:
+#   y = a_1*x^n + a_2*x^(n-1) + ... + a_n
+# useful to obtain: person_depth[m] from face_width[pixels]
+camera_model: [5.5966e-22, -1.3651e-18, 1.4468e-15, -8.7314e-13, 3.3058e-10, -8.1623e-08, 1.3248e-05, -1.3913e-03, 9.0455e-02, -3.3137e+00, 5.4756e+01]
