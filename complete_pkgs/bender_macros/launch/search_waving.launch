@@ -1,0 +1,8 @@
+<launch>
+
+	<!-- macro -->
+	<node name="search_waving" pkg="bender_macros" type="search_waving" output="screen">
+		<rosparam file="$(find bender_macros)/config/SearchWaving.yaml"/>
+	</node>
+	
+</launch>

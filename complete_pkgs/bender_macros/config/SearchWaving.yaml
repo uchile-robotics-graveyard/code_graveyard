@@ -1,0 +1,18 @@
+
+# Parameters for Search Face Macro
+
+
+# Search Settings
+# - - - - - - - - - - - - - - -
+
+# body positions used in each search process [degrees]
+body_angles: [ 35, 0, -35, 35]
+
+# How much to wait for wave recognition
+wave_timeout: 6.0
+
+# rgbd settings
+# - - - - - - - - - - - - - -
+
+# rgbd camera frame
+rgbd_tf: "/bender/sensors/rgbd_waist_link"

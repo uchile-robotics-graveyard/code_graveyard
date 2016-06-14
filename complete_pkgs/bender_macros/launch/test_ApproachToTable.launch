@@ -1,0 +1,18 @@
+<launch>
+
+	<!-- - - - - - - - - - - - N a v i g a t i o n - - - - - - - - - - -->
+	<include file="$(find bender_nav)/launch/complete_nav.launch">
+		<arg name="simulation" value="true"/>
+		<arg name="rviz"       value="false"/>
+	</include>
+
+	<!-- rgbd_head -->
+	<include file="$(find bender_sensors)/launch/rgbd/rgbd_head.launch"/>
+
+	<!-- table detector -->
+	<include file="$(find bender_pcl)/launch/furniture/table_detector.launch"/>
+
+	<!-- rviz -->
+	<node name="rviz" pkg="rviz" type="rviz" respawn="false" output="log" args="-d $(find bender_macros)/config/rviz/approach_to_table.vcg"/>
+
+</launch>
