@@ -1,0 +1,20 @@
+<launch>
+
+	<!-- macro -->
+	<arg name="node_name" value="person_blocking_detector"/>
+	<node name="$(arg node_name)" pkg="bender_macros" type="$(arg node_name)" ns="/bender/macros/">
+
+		<!-- remap params -->
+		<remap from="$(arg node_name)/plan_tolerance" to="/bender/nav/move_base/TrajectoryPlannerROS/xy_goal_tolerance"/>
+
+		<!-- remap topics -->
+		<remap from="$(arg node_name)/new_goal"    to="/bender/nav/move_base/current_goal"/>
+		<remap from="$(arg node_name)/new_plan"    to="/bender/nav/move_base/NavfnROS/plan"/>
+		<remap from="$(arg node_name)/people_legs" to="/bender/laser/leg_detector/leg_detections"/>
+		<remap from="$(arg node_name)/people_body" to="/bender/pcl/hog_person_detector/detections"/>
+
+		<!-- remap services -->
+		<remap from="$(arg node_name)/make_plan"   to="/bender/nav/move_base/NavfnROS/make_plan"/>
+	</node>
+	
+</launch>
