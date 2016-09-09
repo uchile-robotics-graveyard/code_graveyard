@@ -1,0 +1,23 @@
+<OpenNI>
+  <Licenses>
+  </Licenses>
+  <Log writeToConsole="true" writeToFile="false">
+    <LogLevel value="1"/>
+      <Masks>
+        <Mask name="ALL" on="true"/>
+      </Masks>
+      <Dumps>
+      </Dumps>
+  </Log>
+    <ProductionNodes startGenerating="true">
+    <Node type="Depth">
+      <Configuration>
+        <Property type="int" name="RegistrationType" value="1"/>
+        <Property type="int" name="Registration" value="1"/>
+	<MapOutputMode xRes="640" yRes="480" FPS="30"/> 
+      </Configuration>
+    </Node>
+    <Node type="Gesture" />
+    <Node type="Hands" />
+  </ProductionNodes>
+</OpenNI>

@@ -1,0 +1,9 @@
+<launch>
+
+	<!-- kinect tracker -->
+	<node name="kinect_tracker" pkg="bender_libs" type="kinect_tracker" ns="/bender/vision/"/>
+
+	<!-- kinect occlusion detector -->
+	<!--node name="kinect_occlusion_detector"  pkg="bender_ni" type="kinect_occlusion_detector" ns="/bender/vision/"/-->
+
+</launch>
