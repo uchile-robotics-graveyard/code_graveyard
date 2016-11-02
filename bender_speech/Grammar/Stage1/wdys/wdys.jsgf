@@ -1,0 +1,41 @@
+#JSGF V1.0;
+
+grammar questions;
+
+public <questions> = ( /80/ <question> ) | /10/ <noise> ; 
+<question> = ( <q1> | <q2> | <q3> | <q4> | <q5> | <q6> | <q7> | <q8> | <q9> | <q10> );
+
+/*
+<q1> = ( <what> <is> <the> CAPITAL OF GERMANY ) ; 
+<q2> = ( <when> <is> <the> NEXT SOLAR ECLIPSE ) ;
+<q3> = ( <which> <is> <the> COMMON NAME OF SODIUM CHLORIDE ) ;
+<q4> = ( IN <what> COUNTRY YOU FIND VALPARAISO ) ;
+<q5> = ( <what> <is> <the> WORLD'S HEAVIEST ANIMAL ) ;
+<q6> = ( <what> COLOUR <is> <the> SUN ) ;
+<q7> = ( <who> <is> <the> BEST FRIEND OF MEN ) ; 
+<q8> = ( <when> WAS <the> FIRST ROBOCUP ) ;
+<q9> = ( <what> <is> <the> TALLEST MOUNTAIN IN THE WORLD ) ;
+<q10> = ( <when> WERE YOU BORN ) ;
+*/
+
+<how> = HOW ;
+<what> = WHAT ;
+<when> = WHEN ;
+<which> = WHICH ;
+<who> = WHO ;
+<is> = IS ;
+<the> = THE ;
+
+<q1> = <what> TIME <is> IT ;
+<q2> = <what> <is> YOUR NAME ;
+<q3> = <what> <is> <the> CAPITAL OF BRAZIL ;
+<q4> = IN <which> YEAR WAS ROBOCUP FOUNDED ;
+<q5> = <how> MANY RINGS HAS <the> OLYMPIC FLAG ;
+<q6> = <what> <is> <the> ANSWER TO <the> ULTIMATE QUESTION ABOUT LIFE THE UNIVERSE AND EVERYTHING ;
+<q7> = <what> <is> <the> WORLD'S MOST POPULAR GREEN VEGETABLE ;
+<q8> = <what> <is> <the> OLDEST DRUG USED ON EARTH ;
+<q9> = <which> INSECT HAS THE BEST EYESIGHT ;
+<q10> = <who> LIVES IN A PINEAPPLE UNDER <the> SEA ;
+
+<noise> = ( HUM | WA | SH | CH | S | MM ) ;
+

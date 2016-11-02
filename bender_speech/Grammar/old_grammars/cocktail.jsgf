@@ -1,0 +1,9 @@
+#JSGF V1.0;
+grammar cocktail;
+public <cocktail> = (<names> | <drinks> | <confirmation>);
+
+<robot> = BENDER;
+
+<names> = (JOHN | MICHAEL | BRUCE);
+<drinks> = (COKE | FANTA | SPRITE);
+<confirmation> = (YES | NO);

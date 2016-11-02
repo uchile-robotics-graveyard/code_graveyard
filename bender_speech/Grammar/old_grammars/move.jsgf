@@ -1,0 +1,26 @@
+#JSGF V1.0;
+grammar navigation;
+public <navigation> = (<robot> <movement_command>) | ([<robot>] <stop> | <noise>+);
+
+<robot> = BENDER | ROBOT;
+<stop> = STOP | DANGER;
+
+<movement_command> = (<displacement_command> | <turn_command> | <location_command>);
+
+<displacement_command> = (<move> <direction>);
+<turn_command> = (<turn> <rotation_direction>);
+<location_command> = (<go> TO THE <location>);
+<move> = (MOVE);
+<turn> = (TURN);
+<go> = (GO);
+
+<direction> = (<forward> | <backwards>);
+<rotation_direction> = (<right> | <left>);
+<location> = (KITCHEN | BEDROOM | LIVINGROOM | DININGROOM | HALL | CORRIDOR);
+
+<forward> = FORWARD;
+<backwards> = BACKWARDS;
+<right> = RIGHT;
+<left> = LEFT;
+
+<noise> = ( <move> | <turn> | <go> | <direction> | <rotation_direction> | <location>);

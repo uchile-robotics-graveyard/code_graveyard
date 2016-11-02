@@ -1,0 +1,71 @@
+#JSGF V1.0;
+
+grammar sentence;
+
+public <sentence> =  <complete_sentenceA> | <complete_sentenceB>  |<complete_sentenceC>|<complete_sentenceD>|<complete_sentenceE>| <complete_sentenceF> | <complete_sentenceG>  | <complete_sentenceH> | <complete_sentenceI> |	<complete_sentenceJ> | <noise>;
+
+<complete_sentenceA> = <sentence_location_place> [AND] <ordernoperson> [[AND] <orderwithperson>] ;
+<complete_sentenceB> = <sentence_location_location> [AND] <getobj> [AND] <deliber_obj>;
+<complete_sentenceC> = <sentence_location_location> [COUNTTHE <category_object> [[AND] (REPORTTOME | REPORTTO [THE] <person_name> <preposition_place> <location> )]];
+<complete_sentenceD> = <inittakeobject> [AND] <deliber_obj> [[AND] <orderwithperson>] ;
+<complete_sentenceE> = <sentence_independent>;
+<complete_sentenceF> = <ordernopersonloc> [AND](<orderwithperson>[[AND] <deliver_withoutobj>] | <deliver_withoutobj> [[AND] <orderwithperson>]);
+<complete_sentenceG> = <getobj> [AND] <deliber_obj> [[AND] (<orderwithperson> | <order_return>)];
+<complete_sentenceH> = <sentence_location_place> [AND] <find_obj> [[AND] <deliber_obj>];
+<complete_sentenceI> = <deliver_withoutobj> [AND](<orderwithperson> | <order_return> );
+<complete_sentenceJ> = <sentence_location_place> [AND] <question> TOTHEPERSONTHERE <question_prep> <person_belongs> <ask_theme> [AND] ( <orderwithperson> | <order_report>);
+
+<sentence_location_place> =  <orderplace_independent> [THE] <place> ;
+<sentence_location_location> = <orderlocation_independent> [THE] <location>;
+
+<getobj> = (TAKETHE | GRASPTHE | GETTHE |GETA) <object> [FROMTHE <location>];  
+<deliber_obj> = (<orderobject_deliber>  [THE] <location> | <orderobject_deliber> [THE] <person_name> [<preposition_place> <place>] | <orderobject_deliber> ME) ;
+<sentence_person> = <orderperson> [THE | TOTHE] <person> [ <preposition_place> <place>];
+<sentenceobj_independent> =  COUNTTHE <category_object> [<preposition_place> <location>];
+<sentenceperson_independent> = <interactperson> <category_object> [ TO [THE] <person_name>  [<preposition_place> <place>]];
+<find_obj> = <search> [THE | A] <object> [<preposition_place> <location> ];
+<deliver_withoutobj> = <orderobj_bring> <object> TO [THE] <person_name> <preposition_place> <place> ;
+
+
+<sentence_independent> = <sentenceperson_independent> | <sentence_location_place>;
+<orderlocation_independent> = (GOTO | NAVIGATETO | REACH);
+<orderplace_independent> = (GOTO | NAVIGATETO | REACH | GETINTO);
+<orderobject_deliber> = (TAKETHEMTO| TAKEITTO | BRINGITTO | BRINGTHEMTO | DELIVERITTO | CARRYITTO);
+<orderperson> = (FOLLOW | REPORT );
+<inittakeobject> = TAKETHIS[ OBJECT | <object>] | TAKETHE [OBJECT | <object>];
+<ordernoperson> = <search>[A] <person_name>;
+<ordernopersonloc> = <search>[A]<person_name> <preposition_place> <place>;
+<interactperson> = ( OFFERA);
+
+<orderwithperson> = (<talk> <themes> | <answer> | FOLLOW <person>); 
+<talk> = TELL | TELLHER | TELLHIM | SAY | SPEAK;
+<answer> = ANSWERAQUESTION | ANSWERHIMAQUESTION | ANSWERHERAQUESTION;
+<themes> = YOURNAME | THENAMEOFYOURTEAM | THETIME | WHATTIMEISIT | THEDATE | WHATDAYISTODAY | WHATDAYISTOMORROW | THEDAYOFTHEMONTH | THEDAYOFTHEWEEK;
+<ask_theme> = NAME | LASTNAME | NICKNAME;
+
+<person> =  <person_name> | <pronoun_obj>;
+<pronoun_obj> =  ME | HIM | HER ;
+<person_belongs> = HIS | HER;
+
+<search> = FIND | LOOKFOR;
+<preposition_place> = INTHE | ATTHE | WHICHISINTHE ;
+<preposition_location> = NEARTHE | NEXTOTHE | ONTHE ;
+<preposition> = TOTHE;
+<question> = REQUEST | ASK ;
+<loc_unespecif> = THERE;
+<question_prep> = ABOUT | FOR;
+<orderobj_bring> = BRINGA | BRINGTHE | TAKETHE | TAKEA ;
+<order_return> = RETURN [TOME] | COMEBACK [TOME] | COMETOME ;
+<order_report> =  REPORTTOME | TELLITTOME;
+<noise> =  HUM | WA | SH | CH | S | MM | PU | TU | SS | HUH | NAA ;
+
+
+#***********INFORMACION
+<place> = HALL | BEDROOM | KITCHEN | LIVINGROOM | DOOR;
+<location> = DINNERTABLE | SHELF | TV;
+<person_name> =  PERSON | SUSAN | MIKE;
+<object> = CRACKERS | COOKIES | PRINGLES ;
+<category_object> =  DRINK | FOOD | OBJECTS;
+
+
+

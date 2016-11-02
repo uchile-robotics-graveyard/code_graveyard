@@ -1,0 +1,9 @@
+<launch>
+
+	<!-- Interaction -->
+	<node name="interaction" pkg="bender_speech" type="Interact.py" output="screen" ns="/bender/speech/">
+		<remap from="interaction/output" to="recognizer/output" />
+		<!--remap from="interaction/output2" to="recognizer2/output" /-->
+	</node>
+
+</launch>

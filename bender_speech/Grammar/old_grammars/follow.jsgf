@@ -1,0 +1,15 @@
+#JSGF V1.0;
+grammar follow;
+public <follow> = (<robot> <follow_command>) | ([<robot>] <stop> | <noise>+);
+
+<robot> = BENDER;
+<stop> = STOP | DANGER;
+
+<follow_command> = (<follow me> | <elevator_command>);
+
+<follow me> = (FOLLOW ME);
+<elevator_command> = (<exit> [<elevator>]);
+<exit> = (EXIT);
+<elevator> = (THE | ELEVATOR);
+
+<noise> = ( NOISE | FOLLOW | ME | EXIT | ELEVATOR | THE);

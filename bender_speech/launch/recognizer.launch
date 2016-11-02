@@ -1,0 +1,25 @@
+<launch>
+
+    <arg name="mic_1_number"    default="1"/> <!-- Microfono de atras (m-audio)-->
+    <arg name="hmm"             default="en-us"/> <!-- en-us-adapt -->
+
+    <!-- especificar numero si se desea usar -->
+    <arg name="use_double_mic" default="false"/>
+    <arg name="mic_2_number"   default="2"/> <!-- Microfono de adelante (asus)-->
+ 
+    <arg name="mic_number_1"   value="$(arg mic_1_number)"/>
+    <arg name="mic_number_2"   value="$(arg mic_2_number)"/>
+
+    <!-- Recognizer -->
+    <node name="recognizer" pkg="bender_speech" type="recognizer.py" ns="/bender/speech/" respawn="true">
+        <rosparam file="$(find bender_speech)/config/recognition_params.yaml" command="load"/>
+        <param name="mic_number"    value="$(arg mic_number_1)"/>
+        <param name="hmm"           value="$(arg hmm)"/>
+    </node>
+
+    <node name="recognizer2" pkg="bender_speech" type="recognizer.py" ns="/bender/speech/" if="$(arg use_double_mic)" respawn="true">
+        <rosparam file="$(find bender_speech)/config/recognition_params.yaml" command="load"/>
+        <param name="mic_number" value="$(arg mic_number_2)" />
+    </node>
+
+</launch>

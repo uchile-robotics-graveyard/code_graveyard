@@ -1,0 +1,10 @@
+#JSGF V1.0;
+grammar drinks_dic;
+
+public <drink> = /80/[<polite>] <drinks> | /10/<noise> ;
+
+<drinks> = ( COLA | BEER | CHOCOLATE MILK | ENERGY DRINK | GRAPE JUICE | MILK | ORANGE JUICE | WATER ) ;
+
+<polite> = I WANT ;
+
+<noise> = ( HUM | WA | SH | CH | S | MM ) ;

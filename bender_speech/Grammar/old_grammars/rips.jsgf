@@ -1,0 +1,10 @@
+#JSGF V1.0;
+grammar rips;
+public <rips> = (<robot> <leave>) | <noise>+;
+
+<robot> = BENDER;
+<stop> = STOP | DANGER;
+
+<leave> = (LEAVE [THE ARENA]);
+
+<noise> = (NOISE | THE | ARENA | STOP);

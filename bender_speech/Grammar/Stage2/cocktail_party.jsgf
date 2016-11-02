@@ -1,0 +1,21 @@
+#JSGF V1.0;
+grammar cocktail_party;
+
+public <words> = ( /45/[<object>] | /45/[<name>] | /10/<noise>);
+
+<robot> = BENDER;
+
+<name> = <female_name> | <male_name> ;
+<object> = <cleaning_stuff> | <drink> | <snack> | <food> ;
+
+<female_name> = ( ANNA | BETH | CARMEN | JENNIFER | JESSICA | KIMBERLY | KRISTINA | LAURA | MARY | SARAH ) ;
+<male_name> =  ( ALFRED | CHARLES | DANIEL | JAMES | JOHN | LUIS | PAUL | RICHARD | ROBERT | STEVE ) ;
+
+<cleaning_stuff> = ( BRUSH | DETERGENT | SHAMPOO | SPONGE | TOOTH PASTE ) ;
+<drink> = ( COLA | BEER | CHOCOLATE MILK | ENERGY DRINK | GRAPE JUICE | MILK | ORANGE JUICE | WATER ) ;
+<snack> = ( CHIPS | BISCUITS | BREAD | CHOCOLATE COOKIES | PRINGRLES | STRAWBERRY COOKIES ) ;
+<food> = ( BABY FOOD | BEANS | COFFEE | CRACKERS | NOODLES | YEAST ) ;
+
+<place> = ( HALLWAY TABLE | BAR | SIDEBOARD | KICHEN TABLE | WASTE BIN ) ; 
+
+<noise> = ( HUM | WA | SH | CH | S | MM ) ;

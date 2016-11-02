@@ -1,0 +1,31 @@
+#JSGF V1.0;
+
+grammar sentence;
+
+public <sentence> =  <complete_sentenceA> | <complete_sentenceB> | <complete_sentenceC> | <complete_sentenceD> | <complete_sentenceE> |
+<complete_sentenceF> | <complete_sentenceG> | <complete_sentenceH> | <noise> ;
+
+<complete_sentenceA> = [<initnoun>] <fruit_snack> [<connectnoun>] <cereal> ;
+<complete_sentenceB> = [<initnoun>] <cereal> [<connectnoun>] <fruit_snack> ;
+<complete_sentenceC> = [<initnoun>] <fruit_snack> [<connectnoun>] <cereal> [<connectnoun>] <milk> ;
+<complete_sentenceD> = [<initnoun>] <cereal> [<connectnoun>] <fruit_snack> [<connectnoun>] <milk> ;
+<complete_sentenceE> = [<initnoun>] <milk> [<connectnoun>] <fruit_snack> [<connectnoun>] <cereal> ;
+<complete_sentenceF> = [<initnoun>] <milk> [<connectnoun>] <cereal> [<connectnoun>] <fruit_snack> ;
+<complete_sentenceG> = [<initnoun>] <fruit_snack> [<connectnoun>] <milk> [<connectnoun>] <cereal> ;
+<complete_sentenceH> = [<initnoun>] <cereal> [<connectnoun>] <milk> [<connectnoun>] <fruit_snack> ;
+
+<initnoun> = [<initiator>][<pronoun>] ;
+<connectnoun> = [<connector>][<pronoun>] ;
+
+
+<initiator> = GIVEME | IWANT | IWOULDLIKE ;  
+<connector> = WITH | AND ;
+<pronoun> = A | AN ;
+
+<noise> =  HUM | WA | SH | CH | S | MM | PU | TU | SS | HUH | NAA ;
+
+
+# *********** INFORMACION **************
+<milk> = CHOCOLATE_MILK | LIGHT_MILK | LACTOSE_FREE_MILK | STRAWBERRY_MILK | FAT_FREE_MILK ;
+<cereal> = CHOCOFLAKES | FLAKES | FROOTLOOPS | CHEERIOS | TRIX | FROSTIES ;
+<fruit_snack> = APPLE | PEACH | BANANA | PINEAPPLE | ORANGE | KIWI_FRUIT;

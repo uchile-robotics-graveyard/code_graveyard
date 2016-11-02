@@ -1,0 +1,5 @@
+<launch>
+	
+	<node name="microphone_launcher" pkg="bender_speech" type="launch_microphone.bash" ns="/bender/speech/" args="--auto" />
+	
+</launch>

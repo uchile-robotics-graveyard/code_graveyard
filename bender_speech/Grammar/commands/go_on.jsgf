@@ -1,0 +1,5 @@
+#JSGF V1.0;
+grammar go_on;
+public <go_on> = BENDER GO ON | <noise>+;
+
+<noise> = ( HUM | WA | SH | CH | S | MM | PU | TU | SS | HUH | NAA  );

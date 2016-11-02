@@ -1,0 +1,65 @@
+Language model created by QuickLM on Tue Jan  6 16:19:12 EST 2015
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 8 sentences and 12 words
+
+\data\
+ngram 1=12
+ngram 2=18
+ngram 3=12
+
+\1-grams:
+-0.8451 </s> -0.3010
+-0.8451 <s> -0.2249
+-1.7482 BEER -0.2341
+-1.7482 CHOCOLATE -0.2852
+-1.7482 COLA -0.2341
+-1.7482 DRINK -0.2341
+-1.7482 ENERGY -0.2932
+-1.7482 GRAPE -0.2852
+-1.4472 JUICE -0.2341
+-1.4472 MILK -0.2341
+-1.7482 ORANGE -0.2852
+-1.7482 WATER -0.2341
+
+\2-grams:
+-1.2041 <s> BEER 0.0000
+-1.2041 <s> CHOCOLATE 0.0000
+-1.2041 <s> COLA 0.0000
+-1.2041 <s> ENERGY 0.0000
+-1.2041 <s> GRAPE 0.0000
+-1.2041 <s> MILK 0.0000
+-1.2041 <s> ORANGE 0.0000
+-1.2041 <s> WATER 0.0000
+-0.3010 BEER </s> -0.3010
+-0.3010 CHOCOLATE MILK 0.0000
+-0.3010 COLA </s> -0.3010
+-0.3010 DRINK </s> -0.3010
+-0.3010 ENERGY DRINK 0.0000
+-0.3010 GRAPE JUICE 0.0000
+-0.3010 JUICE </s> -0.3010
+-0.3010 MILK </s> -0.3010
+-0.3010 ORANGE JUICE 0.0000
+-0.3010 WATER </s> -0.3010
+
+\3-grams:
+-0.3010 <s> BEER </s>
+-0.3010 <s> CHOCOLATE MILK
+-0.3010 <s> COLA </s>
+-0.3010 <s> ENERGY DRINK
+-0.3010 <s> GRAPE JUICE
+-0.3010 <s> MILK </s>
+-0.3010 <s> ORANGE JUICE
+-0.3010 <s> WATER </s>
+-0.3010 CHOCOLATE MILK </s>
+-0.3010 ENERGY DRINK </s>
+-0.3010 GRAPE JUICE </s>
+-0.3010 ORANGE JUICE </s>
+
+\end\
