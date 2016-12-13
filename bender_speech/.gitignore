@@ -1,0 +1,13 @@
+# Files we don't want to track on git
+
+# common
+*~
+
+# python
+*.pyc
+
+
+# eclipse
+*.project
+*.cproject
+*.pydevproject

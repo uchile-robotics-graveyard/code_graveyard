@@ -1,0 +1,25 @@
+<launch>
+
+	<!-- synthesizer args -->
+	<!-- available languages: { english , spanish } -->
+	<arg name="language" default="english"/>
+	<arg name="show_subtitles" default="false"/>
+
+	<!-- recognizer args -->
+	<arg name="use_double_mic" default="false"/>
+
+	<!-- text synthesizer -->
+	<include file="$(find bender_tts)/launch/tts.launch">
+		<arg name="language" value="$(arg language)"/>
+		<arg name="show_subtitles" value="$(arg show_subtitles)"/>
+	</include>
+
+	<!-- sound player -->
+	<include file="$(find bender_sound)/launch/sound.launch"/>
+
+	<!-- Speech -->
+	<include file="$(find bender_speech)/launch/recognizer.launch">
+		<arg name="use_double_mic" value="$(arg use_double_mic)"/>
+	</include>
+
+</launch>

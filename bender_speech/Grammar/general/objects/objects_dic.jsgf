@@ -1,0 +1,10 @@
+#JSGF V1.0;
+grammar object_dic;
+public <object> = (<cleaning_stuff> | <drink> | <snack> | <food> | [<noise>] );
+
+public <cleaning_stuff> = ( BRUSH | DETERGENT | SHAMPOO | SPONGE | TOOTH PASTE ) ;
+public <drink> = ( COLA | BEER | CHOCOLATE MILK | ENERGY DRINK | GRAPE JUICE | MILK | ORANGE JUICE | WATER ) ;
+public <snack> = ( CHIPS | BISCUITS | BREAD | CHOCOLATE COOKIES | PRINGRLES | STRAWBERRY COOKIES ) ;
+public <food> = ( BABY FOOD | BEANS | COFFEE | CRACKERS | NOODLES | YEAST ) ;
+
+<noise> = ( HUM | WA | SH | CH | S | MM ) ;

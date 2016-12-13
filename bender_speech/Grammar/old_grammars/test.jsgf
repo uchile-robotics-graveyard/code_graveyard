@@ -1,0 +1,45 @@
+#JSGF V1.0;
+grammar navigation;
+public <navigation> = (<robot> <command>) | ([<robot>] <stop>);
+
+<robot> = BENDER;
+<command> = (<movement_command> | <velocity_command>);
+<stop> = STOP | HALT | DANGER | NOOO;
+
+<movement_command> = (<displacement_command> | <turn_command> | <location_command>);
+<velocity_command> = (((<go> | ([SET] VELOCITY )) <absolute_vel>) | (<go> <relative_vel>));
+
+<displacement_command> = (<go> <direction> [[FOR] (<duration> | <distance>)]);
+<turn_command> = (TURN <rotation_direction> [[FOR]( <duration>| <angle>)]);
+<location_command> = (<go> TO THE <location>);
+<go> = (GO | MOVE);
+<absolute_vel> = (<fast> | <medium> | <slow>);
+<relative_vel> = (<faster> | <slower>);
+
+<direction> = (<forward> | <backwards>);
+<rotation_direction> = (<right> | <left>);
+<duration> = (<digits> SECONDS);
+<distance> = (<digits> [POINT <digits>] METERS);
+<angle> = (<number> DEGREES){angle};
+<location> = (KITCHEN | BEDROOM | LIVINGROOM | DININGROOM | HALL | CORRIDOR);
+<fast> = (FAST | HIGH);
+<medium> = (MEDIUM | NORMAL);
+<slow> = (SLOW | LOW);
+<faster> = FASTER;
+<slower> = SLOWER;
+
+<forward> = FORWARD;
+<backwards> = BACKWARDS;
+<right> = RIGHT;
+<left> = LEFT;
+
+<number> = ([<digits> HUNDRED AND] <number_tenths>);
+<number_tenths> = (<number_tenths_ty> <digits>) | <number_tenths_teen>;
+<number_tenths_ty> = (TWENTY | THIRTY | FOURTY | FIFTY | SIXTY | SEVENTY | EIGHTY | NINETY);
+<number_tenths_teen> = (TEN | ELEVEN | TWELVE | THIRTEEN | FOURTEEN | FIFTEEN | SIXTEEN | SEVENTEEN | EIGHTEEN | NINETEEN);
+<digits> = (ONE | TWO | THREE | FOUR | FIVE | SIX | SEVEN | EIGHT | NINE);
+
+
+
+
+

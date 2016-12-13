@@ -1,0 +1,17 @@
+#JSGF V1.0;
+
+grammar questions;
+
+public <questions> = (<whquest> <question> ); 
+
+<whquest> = ( WHAT | HOW | WHO );
+
+<question> = ( <q1> | <q2> | <q3> | <q4> | <q5> | <q6> | <q7> );
+
+<q1> = ( IS THE CAPITAL OF GERMANY ) ; 
+<q2> = ( ARE YOU ) ;
+<q3> = ( IS THE COMMON NAME OF SODIUM CHLORIDE ) ;
+<q4> = ( COUNTRY YOU FIND VALPARAISO ) ;
+<q5> = ( IS THE WORLD'S HEAVIEST ANIMAL ) ;
+<q6> = ( COLOUR IS THE SUN ) ;
+<q7> = ( IS THE BEST FRIEND OF MEN ) ; 

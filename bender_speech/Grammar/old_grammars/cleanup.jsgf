@@ -1,0 +1,13 @@
+#JSGF V1.0;
+grammar navigation;
+public <navigation> = (<robot> <cleanup_command>) | ([<robot>] <stop> | <noise>+);
+
+<robot> = BENDER;
+<stop> = STOP | DANGER;
+
+<cleanup_command> = (CLEAN UP THE <location>);
+
+<location> = (KITCHEN | BEDROOM | LIVINGROOM | DININGROOM | HALL | CORRIDOR);
+
+
+<noise> = (CLEAN | UP | THE | <location>);

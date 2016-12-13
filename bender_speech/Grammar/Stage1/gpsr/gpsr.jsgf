@@ -1,0 +1,56 @@
+#JSGF V1.0;
+
+grammar sentence;
+
+public <sentence> =  <complete_sentenceA> | <complete_sentenceB>  |<complete_sentenceC>|<complete_sentenceD>|<complete_sentenceE>|<complete_sentenceF>|  <noise>;
+
+<complete_sentenceA> = <sentence_location_place> [<ordernoperson> [[AND] <orderwithperson>]];
+<complete_sentenceB> = <sentence_location_location> [<takeobj_table> [[AND] <deliber_obj>]];
+<complete_sentenceC> = <sentence_location_location> [COUNTTHE <category_object> [[AND] (REPORTTOME | REPORTTO [THE] <person_name> )]];
+<complete_sentenceD> = <inittakeobject> [<deliber_obj> [[AND] (<orderwithperson> | <sentence_independent>)]];
+<complete_sentenceE> = <sentence_takeobj2person> [[AND] <orderwithperson> ];
+<complete_sentenceF> = <sentence_independent>;
+
+
+<sentence_location_place> =  <orderlocation_independent> <place> ;
+<sentence_location_location> = <orderlocation_independent> <location>;
+<takeobj_table> = GRASPTHE <object>;
+<deliber_obj> = <orderobject_deliber>  [THE] <location> | <orderobject_deliber>  [THE] <person> [<preposition_place> <place>] ;
+<sentence_person> = <orderperson> [THE | TO THE ] <person> [ (INTHE | ON) <place>];
+<sentence_takeobj2person> = <takeobj> <object> [ (TOTHEPERSON | TO <person> ) [ <preposition_place> (<place> | <location>)]];
+
+<sentenceobj_independent> =  COUNTTHE <category_object> [<preposition_place> <location>];
+<sentenceperson_independent> = <interactperson> <category_object> [ TO [THE] <person_name>  [<preposition_place> <place>]];
+
+
+<orderlocation_independent> = (GOTOTHE);
+<orderobject_deliber> = (TAKETHEMTO | BRINGIT);
+<takeobj> = ( BRINGA );
+<orderperson> = (FOLLOW | REPORT );
+<inittakeobject> = (TAKETHISOBJECT);
+<ordernoperson> = FINDAPERSON;
+<interactperson> = ( OFFERA);
+<orderwithperson> = (TELLTHETIME | ANSWERHIMAQUESTION | ANSWERHERAQUESTION | FOLLOWHIM | FOLLOWHER | <interactperson> <category_object>) ;
+<sentence_independent> = <sentenceperson_independent> | <sentence_location_place>;
+
+
+
+
+
+<person> =  <person_name> | <pronoun_obj>;
+<preposition_place> = INTHE | ATTHE;
+<preposition> = TOTHE;
+<pronoun_obj> = ME  ;
+<noise> =  HUM | WA | SH | CH | S | MM | PU | TU | SS | HUH | NAA ;
+
+
+#***********INFORMACION
+<place> = HALL | BEDROOM | KITCHEN | LIVINGROOM | DOOR;
+<location> = DINNERTABLE | SHELF | TV;
+<person_name> =  PERSON | SUSAN | MIKE;
+<object> = CRACKERS | COKE ;
+<category_object> =  DRINK | FOOD | OBJECTS;
+
+
+
+

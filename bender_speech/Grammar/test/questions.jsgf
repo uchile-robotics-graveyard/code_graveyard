@@ -1,0 +1,16 @@
+#JSGF V1.0
+
+grammar questions;
+
+public <questions> = (<qword> (<tobe> | <auxiliary>)  ) ;
+
+<qword> = (WHAT | WHERE | HOW | WHO | WHEN | WHOSE | WHY | WHICH | WHOM);
+
+<tobe> = (AM | ARE | IS);
+
+<auxiliary>  = (HAVE | DO);
+
+<verb> = ();
+
+<pronoun> = (MY | YOUR | HIS | HER | OUR | THEIR | ITS);
+

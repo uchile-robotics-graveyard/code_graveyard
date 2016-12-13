@@ -1,0 +1,13 @@
+#JSGF V1.0;
+grammar name_dic;
+
+public <name_rec> = /80/(<polite> <name>) | /10/<noise>;
+
+<polite> = MY NAME IS ;	
+
+<name> = <female_name> | <male_name> ;
+
+<female_name> = ( ANNA | BETH | CARMEN | JENNIFER | JESSICA | KIMBERLY | KRISTINA | LAURA | MARY | SARAH ) ;
+<male_name> =  ( ALFRED | CHARLES | DANIEL | JAMES | JOHN | LUIS | PAUL | RICHARD | ROBERT | STEVE ) ;
+
+<noise> = ( HUM | WA | SH | CH | S | MM ) ;

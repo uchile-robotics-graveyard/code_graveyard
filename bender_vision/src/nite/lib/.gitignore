@@ -1,0 +1,4 @@
+# Don't ignore this folder
+
+# ignore libraries
+*.so

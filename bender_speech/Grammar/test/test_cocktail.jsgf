@@ -1,0 +1,11 @@
+#JSGF V1.0;
+grammar test_cocktail;
+public <test_cocktail> = ( [<names>] | [<recipes>] | <beverages>);
+
+<robot> = BENDER;
+
+<names> = (JOHN | MICHAEL | BRUCE | ASHLEY | MIKE | PETER | BRAN | EDWARD | LINDSAY);
+<beverages> = (COKE | FANTA | SPRITE | JUICE | WATER | DRINK | COFEE | TEA | SODA | LEMONADE);
+<recipes> = (CUP | GLASS | CAN | MUG | BOX);
+<objects> = (BOOK);
+

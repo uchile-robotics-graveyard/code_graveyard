@@ -1,0 +1,5 @@
+#JSGF V1.0;
+grammar pickandplace;
+public <pickandplace> = BENDER GO ON | <noise>+;
+
+<noise> = (NO | YES | FORWARD | MOVE | A | KITCHEN | TO | THE);

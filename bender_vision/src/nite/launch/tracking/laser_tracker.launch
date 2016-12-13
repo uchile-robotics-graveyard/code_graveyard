@@ -1,0 +1,5 @@
+<launch>
+
+	<node name="laser_tracker" pkg="bender_vision" type="laser_tracker" ns="/bender/vision/"/>
+
+</launch>
